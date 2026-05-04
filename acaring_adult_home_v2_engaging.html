@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adult Family Home in Federal Way, WA | ACaring Adult Home</title>
+  <meta name="description" content="ACaring Adult Home provides compassionate Adult Family Home care in Federal Way, Washington for adults who need daily support, supervision, personal care, and a safe home-like setting. Contact us about current availability." />
+  <meta name="keywords" content="Adult Family Home Federal Way WA, developmental disability adult care Federal Way, dementia adult family home Federal Way, residential care home Federal Way, adult care home Washington State" />
+  <meta property="og:title" content="Adult Family Home in Federal Way, WA | ACaring Adult Home" />
+  <meta property="og:description" content="A warm, home-like Adult Family Home in Federal Way for adults who need daily support, supervision, and respectful personal care." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/home-front.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-bg: #FAFAF7;
+      --color-bg-secondary: #F5F0E8;
+      --color-bg-card: #FFFFFF;
+      --color-text-primary: #1A2E28;
+      --color-text-secondary: #4A5A54;
+      --color-text-muted: #7A8A84;
+      --color-border: rgba(30, 50, 40, 0.12);
+      --color-border-medium: rgba(30, 50, 40, 0.2);
+      --color-green: #2E7D6B;
+      --color-green-dark: #1d6558;
+      --color-green-light: #EAF5F0;
+      --color-green-accent: #52C4A0;
+      --color-cream: #FFF8ED;
+      --color-gold: #D29A4A;
+      --color-dark: #1A2E28;
+      --shadow-soft: 0 18px 50px rgba(26, 46, 40, 0.10);
+      --shadow-card: 0 10px 30px rgba(26, 46, 40, 0.08);
+      --font-serif: 'Lora', Georgia, serif;
+      --font-sans: 'DM Sans', system-ui, sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-xl: 28px;
+      --radius-pill: 99px;
+      --container: 1180px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text-primary);
+      background: var(--color-bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .container { width: min(var(--container), calc(100% - 40px)); margin: 0 auto; }
+
+    .section { padding: 5rem 0; }
+    .section-soft { background: var(--color-bg-secondary); }
+    .section-dark { background: var(--color-dark); color: #fff; }
+    .section-eyebrow {
+      font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--color-green); margin-bottom: 0.7rem; font-weight: 700;
+    }
+    .section-dark .section-eyebrow { color: var(--color-green-accent); }
+    .section-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.7rem); font-weight: 600;
+      color: var(--color-text-primary); margin-bottom: 1rem; line-height: 1.18; letter-spacing: -0.03em;
+    }
+    .section-dark .section-title { color: #fff; }
+    .section-intro {
+      max-width: 700px; font-size: 1rem; color: var(--color-text-secondary);
+    }
+    .section-dark .section-intro { color: rgba(255,255,255,0.72); }
+
+    /* NAV */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      border-bottom: 0.5px solid var(--color-border);
+      background: rgba(250, 250, 247, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .nav-inner {
+      width: min(var(--container), calc(100% - 40px)); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+      padding: 0.95rem 0;
+    }
+    .nav-logo {
+      font-family: var(--font-serif); font-size: 1.12rem; font-weight: 600;
+      letter-spacing: -0.01em; color: var(--color-text-primary); text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-logo span { color: var(--color-green); }
+    .nav-links { display: flex; gap: 1.4rem; list-style: none; align-items: center; }
+    .nav-links a {
+      font-size: 13.5px; color: var(--color-text-secondary); text-decoration: none;
+      font-weight: 500; letter-spacing: 0.01em; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--color-text-primary); }
+    .nav-cta, .btn-primary, .btn-outline, .btn-light, .btn-small {
+      border-radius: var(--radius-pill); cursor: pointer;
+      font-family: var(--font-sans); font-weight: 700; letter-spacing: 0.01em;
+      transition: transform 0.2s, background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+      text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px;
+    }
+    .nav-cta {
+      font-size: 13px; background: var(--color-green); color: #fff; border: none;
+      padding: 9px 18px;
+    }
+    .nav-cta:hover, .btn-primary:hover { background: var(--color-green-dark); transform: translateY(-1px); }
+    .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-mobile-btn span {
+      display: block; width: 24px; height: 2px; background: var(--color-text-primary);
+      margin: 5px 0; transition: all 0.3s;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(82, 196, 160, 0.18), transparent 30%),
+        linear-gradient(135deg, var(--color-bg-secondary), #fff);
+    }
+    .hero-inner {
+      min-height: 660px;
+      display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 3rem; align-items: center;
+      padding: 4.5rem 0;
+    }
+    .hero-copy { position: relative; z-index: 2; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; letter-spacing: 0.11em; text-transform: uppercase;
+      color: var(--color-green); font-weight: 800; margin-bottom: 1.25rem;
+      border: 1px solid rgba(46,125,107,0.24); background: rgba(255,255,255,0.65);
+      padding: 7px 13px; border-radius: var(--radius-pill);
+    }
+    .hero-tag::before {
+      content: ''; width: 8px; height: 8px; background: var(--color-green-accent);
+      border-radius: 999px; box-shadow: 0 0 0 5px rgba(82,196,160,0.14);
+    }
+    .hero-title {
+      font-family: var(--font-serif); font-size: clamp(2.45rem, 5vw, 4.75rem); line-height: 1.02;
+      font-weight: 600; color: var(--color-dark); margin-bottom: 1.2rem; letter-spacing: -0.055em;
+    }
+    .hero-title em { font-style: italic; color: var(--color-green); }
+    .hero-sub {
+      font-size: 1.08rem; line-height: 1.8; color: var(--color-text-secondary);
+      max-width: 550px; margin-bottom: 1.6rem;
+    }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1.7rem; }
+    .btn-primary {
+      background: var(--color-green); color: #fff; border: 1px solid var(--color-green);
+      padding: 13px 23px; font-size: 14px; box-shadow: 0 10px 20px rgba(46,125,107,0.15);
+    }
+    .btn-outline {
+      background: #fff; color: var(--color-green); border: 1px solid rgba(46,125,107,0.32);
+      padding: 13px 23px; font-size: 14px;
+    }
+    .btn-outline:hover { background: var(--color-green-light); border-color: var(--color-green); transform: translateY(-1px); }
+    .hero-note {
+      display: flex; align-items: center; gap: 10px; font-size: 13px;
+      color: var(--color-text-muted); max-width: 560px;
+    }
+    .hero-note span {
+      width: 28px; height: 28px; border-radius: 50%; background: #fff;
+      display: inline-flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow-card); color: var(--color-green); flex-shrink: 0;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 520px;
+    }
+    .photo-grid {
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 16px; height: 520px;
+    }
+    .photo-card {
+      border-radius: var(--radius-xl); overflow: hidden; position: relative; background: var(--color-green-light);
+      box-shadow: var(--shadow-soft); border: 1px solid rgba(255,255,255,0.7);
+    }
+    .photo-card img {
+      width: 100%; height: 100%; object-fit: cover;
+      background: linear-gradient(135deg, #e8efe9, #c5ddd2);
+    }
+    .photo-card::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 45%, rgba(0,0,0,0.35));
+      pointer-events: none;
+    }
+    .photo-main { grid-row: span 2; }
+    .photo-stack { display: grid; gap: 16px; }
+    .photo-caption {
+      position: absolute; left: 16px; right: 16px; bottom: 16px; z-index: 2;
+      color: #fff; font-size: 13px; font-weight: 700;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+    }
+    .availability-card {
+      position: absolute; left: -22px; bottom: 32px; z-index: 4;
+      background: #fff; border-radius: 20px; padding: 18px; box-shadow: var(--shadow-soft);
+      width: min(300px, 80%); border: 1px solid var(--color-border);
+    }
+    .availability-card strong { display: block; font-size: 15px; margin-bottom: 4px; }
+    .availability-card p { color: var(--color-text-muted); font-size: 12.5px; line-height: 1.55; }
+    .availability-pulse {
+      display: inline-flex; align-items: center; gap: 8px; color: var(--color-green);
+      font-size: 12px; font-weight: 800; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .availability-pulse::before {
+      content: ''; width: 9px; height: 9px; background: var(--color-green-accent);
+      border-radius: 50%; animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(82, 196, 160, 0.45); }
+      70% { box-shadow: 0 0 0 8px rgba(82, 196, 160, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(82, 196, 160, 0); }
+    }
+
+    /* TRUST RIBBON */
+    .trust-ribbon {
+      background: #fff; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);
+    }
+    .trust-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .trust-item {
+      padding: 1.45rem 1.4rem; border-right: 1px solid var(--color-border);
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-dot {
+      width: 34px; height: 34px; background: var(--color-green-light);
+      border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      color: var(--color-green); font-weight: 800;
+    }
+    .trust-label { font-size: 14px; font-weight: 800; margin-bottom: 2px; }
+    .trust-desc { font-size: 12.5px; color: var(--color-text-muted); line-height: 1.45; }
+
+    /* STORY / WHY */
+    .split {
+      display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3.5rem; align-items: center;
+    }
+    .story-card {
+      background: #fff; border-radius: var(--radius-xl); padding: 1.2rem;
+      box-shadow: var(--shadow-card); border: 1px solid var(--color-border);
+    }
+    .story-card img {
+      width: 100%; height: 410px; object-fit: cover; border-radius: 20px;
+      background: linear-gradient(135deg, #e8efe9, #c5ddd2);
+    }
+    .story-callout {
+      margin-top: 16px; padding: 18px; background: var(--color-green-light); border-radius: 18px;
+      color: var(--color-text-secondary); font-size: 14px;
+    }
+    .feature-list { display: grid; gap: 14px; margin-top: 1.7rem; }
+    .feature-row {
+      display: grid; grid-template-columns: 42px 1fr; gap: 13px; align-items: flex-start;
+      padding: 15px; background: #fff; border: 1px solid var(--color-border); border-radius: 18px;
+    }
+    .feature-icon {
+      width: 42px; height: 42px; border-radius: 14px; background: var(--color-green-light);
+      color: var(--color-green); display: flex; align-items: center; justify-content: center; font-weight: 900;
+    }
+    .feature-row h3 { font-size: 15px; margin-bottom: 3px; }
+    .feature-row p { font-size: 13.5px; color: var(--color-text-muted); line-height: 1.55; }
+
+    /* DAILY LIFE */
+    .life-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 2rem;
+    }
+    .life-card {
+      background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+      overflow: hidden; box-shadow: var(--shadow-card);
+    }
+    .life-card img {
+      width: 100%; height: 175px; object-fit: cover;
+      background: linear-gradient(135deg, #e8efe9, #c5ddd2);
+    }
+    .life-card-body { padding: 18px; }
+    .life-card time {
+      display: inline-block; color: var(--color-green); font-size: 11px; text-transform: uppercase;
+      letter-spacing: 0.12em; font-weight: 800; margin-bottom: 6px;
+    }
+    .life-card h3 { font-size: 16px; margin-bottom: 5px; }
+    .life-card p { font-size: 13px; color: var(--color-text-muted); line-height: 1.55; }
+
+    /* CARE FIT TABS */
+    .tabs-wrap {
+      display: grid; grid-template-columns: 340px 1fr; gap: 2rem; align-items: start; margin-top: 2rem;
+    }
+    .tab-buttons { display: grid; gap: 10px; }
+    .tab-btn {
+      text-align: left; border: 1px solid var(--color-border); background: rgba(255,255,255,0.8);
+      border-radius: 16px; padding: 16px; font-family: var(--font-sans); cursor: pointer;
+      transition: 0.2s; color: var(--color-text-secondary);
+    }
+    .tab-btn strong { display: block; color: var(--color-text-primary); margin-bottom: 2px; }
+    .tab-btn span { font-size: 12.5px; color: var(--color-text-muted); }
+    .tab-btn.active, .tab-btn:hover {
+      border-color: var(--color-green); box-shadow: var(--shadow-card); background: #fff;
+      transform: translateY(-1px);
+    }
+    .tab-panel {
+      display: none; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-xl);
+      padding: 28px; box-shadow: var(--shadow-card);
+    }
+    .tab-panel.active { display: block; }
+    .tab-panel h3 { font-family: var(--font-serif); font-size: 1.65rem; margin-bottom: 0.6rem; }
+    .tab-panel p { color: var(--color-text-secondary); margin-bottom: 1.2rem; }
+    .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .check-item {
+      display: flex; gap: 9px; align-items: flex-start; font-size: 13.5px; color: var(--color-text-secondary);
+      background: var(--color-bg); border-radius: 12px; padding: 12px;
+    }
+    .check-item::before {
+      content: '✓'; color: var(--color-green); font-weight: 900; flex-shrink: 0;
+    }
+
+    /* ADMISSIONS */
+    .steps {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 2rem;
+    }
+    .step-card {
+      background: #fff; color: var(--color-text-primary); border-radius: var(--radius-lg);
+      padding: 22px; border: 1px solid rgba(255,255,255,0.12);
+    }
+    .step-num {
+      width: 40px; height: 40px; border-radius: 14px; background: var(--color-green-accent);
+      color: var(--color-dark); display: flex; align-items: center; justify-content: center;
+      font-weight: 900; margin-bottom: 1rem;
+    }
+    .step-card h3 { font-size: 16px; margin-bottom: 6px; }
+    .step-card p { color: var(--color-text-muted); font-size: 13px; line-height: 1.55; }
+
+    /* ANNOUNCEMENTS */
+    .announce-grid {
+      display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 18px; margin-top: 2rem;
+    }
+    .announcement {
+      border-radius: var(--radius-xl); padding: 28px; background: #fff;
+      border: 1px solid var(--color-border); box-shadow: var(--shadow-card);
+    }
+    .announcement.featured {
+      background: linear-gradient(135deg, var(--color-green), var(--color-green-dark)); color: #fff;
+      position: relative; overflow: hidden;
+    }
+    .announcement.featured::after {
+      content: ''; position: absolute; width: 220px; height: 220px; right: -80px; top: -80px;
+      background: rgba(255,255,255,0.08); border-radius: 50%;
+    }
+    .announcement h3 { font-family: var(--font-serif); font-size: 1.55rem; margin-bottom: 8px; position: relative; z-index: 1; }
+    .announcement p { color: var(--color-text-muted); font-size: 14px; position: relative; z-index: 1; }
+    .announcement.featured p { color: rgba(255,255,255,0.78); }
+    .announcement-date {
+      font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 900;
+      color: var(--color-green); margin-bottom: 8px; position: relative; z-index: 1;
+    }
+    .announcement.featured .announcement-date { color: var(--color-green-accent); }
+    .btn-light {
+      background: #fff; color: var(--color-green-dark); padding: 11px 18px; font-size: 13px;
+      margin-top: 1.2rem; position: relative; z-index: 1;
+    }
+
+    /* MAP + CONTACT */
+    .location-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 2rem; align-items: stretch;
+    }
+    .map-card, .contact-card {
+      border-radius: var(--radius-xl); overflow: hidden; background: #fff; border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-card);
+    }
+    .map-frame { width: 100%; height: 100%; min-height: 470px; border: 0; display: block; }
+    .contact-card { padding: 28px; }
+    .contact-meta { color: var(--color-text-secondary); margin-bottom: 1.2rem; font-size: 14px; }
+    .contact-detail {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: var(--color-text-secondary); margin-bottom: 10px;
+    }
+    .contact-detail strong { color: var(--color-text-primary); }
+    .contact-detail span:first-child { color: var(--color-green); font-weight: 900; width: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 10px; margin-top: 1.2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 11px 13px; border: 1px solid var(--color-border-medium);
+      border-radius: 12px; font-size: 13.5px; font-family: var(--font-sans);
+      background: #fff; color: var(--color-text-primary); outline: none; transition: 0.2s;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--color-green);
+      box-shadow: 0 0 0 4px rgba(46,125,107,0.08);
+    }
+    .form-textarea { min-height: 94px; resize: vertical; }
+    .form-submit {
+      width: 100%; background: var(--color-green); color: #fff; border: none;
+      padding: 13px; border-radius: 12px; font-size: 14px; font-weight: 800;
+      cursor: pointer; font-family: var(--font-sans); transition: 0.2s;
+    }
+    .form-submit:hover { background: var(--color-green-dark); transform: translateY(-1px); }
+    .form-note { font-size: 11.5px; color: var(--color-text-muted); line-height: 1.55; margin-top: 2px; }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 3rem; align-items: start;
+    }
+    .faq-list { display: grid; gap: 10px; }
+    details {
+      background: #fff; border: 1px solid var(--color-border); border-radius: 16px; padding: 17px 18px;
+      box-shadow: 0 4px 18px rgba(26,46,40,0.04);
+    }
+    summary { cursor: pointer; font-weight: 800; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    details p { margin-top: 10px; color: var(--color-text-muted); font-size: 13.5px; line-height: 1.6; }
+
+    /* FOOTER */
+    .footer {
+      background: var(--color-dark); color: rgba(255,255,255,0.78); padding: 2rem 0;
+    }
+    .footer-inner {
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+      font-size: 13px;
+    }
+    .footer-logo { font-family: var(--font-serif); font-size: 16px; color: #fff; }
+    .footer a { color: rgba(255,255,255,0.82); text-decoration: none; margin-left: 16px; }
+    .sticky-mobile-cta { display: none; }
+
+    /* IMAGE PLACEHOLDER FALLBACK */
+    img[src^="images/"] {
+      background:
+        linear-gradient(135deg, rgba(46,125,107,.2), rgba(210,154,74,.16)),
+        repeating-linear-gradient(45deg, #eef4ef 0 12px, #e5eee8 12px 24px);
+    }
+
+    @media (max-width: 980px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-mobile-btn { display: block; }
+      .nav-links.open {
+        display: grid; position: absolute; left: 20px; right: 20px; top: 64px;
+        background: #fff; padding: 18px; border-radius: 18px; box-shadow: var(--shadow-soft);
+        border: 1px solid var(--color-border); gap: 12px;
+      }
+      .hero-inner, .split, .tabs-wrap, .location-grid, .faq-grid, .announce-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-inner { min-height: auto; padding: 3.5rem 0; }
+      .hero-visual { min-height: auto; }
+      .photo-grid { height: auto; grid-template-columns: 1fr; }
+      .photo-main, .photo-stack .photo-card { height: 300px; }
+      .photo-stack { grid-template-columns: 1fr 1fr; }
+      .availability-card { position: static; width: 100%; margin-top: 14px; }
+      .trust-grid, .life-grid, .steps { grid-template-columns: 1fr 1fr; }
+      .check-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .container, .nav-inner { width: min(100% - 28px, var(--container)); }
+      .section { padding: 3.4rem 0; }
+      .hero-title { font-size: 2.35rem; }
+      .photo-stack, .trust-grid, .life-grid, .steps, .form-row { grid-template-columns: 1fr; }
+      .trust-item { border-right: none; border-bottom: 1px solid var(--color-border); }
+      .trust-item:last-child { border-bottom: none; }
+      .map-frame { min-height: 320px; }
+      .sticky-mobile-cta {
+        display: flex; position: fixed; bottom: 12px; left: 12px; right: 12px; z-index: 200;
+        gap: 8px; background: rgba(255,255,255,0.95); border: 1px solid var(--color-border);
+        border-radius: 18px; padding: 8px; box-shadow: var(--shadow-soft);
+      }
+      .sticky-mobile-cta a {
+        flex: 1; text-align: center; text-decoration: none; border-radius: 12px; padding: 11px 8px;
+        font-size: 13px; font-weight: 800;
+      }
+      .sticky-mobile-cta a:first-child { background: var(--color-green); color: #fff; }
+      .sticky-mobile-cta a:last-child { background: var(--color-green-light); color: var(--color-green-dark); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">A<span>Caring</span> Adult Home</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#daily-life">Daily Life</a></li>
+        <li><a href="#care-fit">Care Fit</a></li>
+        <li><a href="#admissions">Admissions</a></li>
+        <li><a href="#events">Updates</a></li>
+        <li><a href="#location">Location</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Ask About Availability</a>
+      <button class="nav-mobile-btn" aria-label="Open menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="hero-tag">Federal Way, Washington</span>
+        <h1 class="hero-title">A warm home for adults who need <em>daily support</em>.</h1>
+        <p class="hero-sub">
+          ACaring Adult Home provides a smaller, family-style residential setting for adults who need supervision, personal care, meals, routines, and a safe place to belong.
+        </p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary">Ask About Availability →</a>
+          <a href="#location" class="btn-outline">View Location</a>
+        </div>
+        <div class="hero-note">
+          <span>✓</span>
+          <p>Welcoming inquiries from families, guardians, case managers, discharge planners, and placement coordinators.</p>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Home photo preview">
+        <div class="photo-grid">
+          <figure class="photo-card photo-main">
+            <img src="images/home-front.jpg" alt="Exterior or welcoming entrance of ACaring Adult Home" />
+            <figcaption class="photo-caption">A calm, residential home setting</figcaption>
+          </figure>
+          <div class="photo-stack">
+            <figure class="photo-card">
+              <img src="images/dining-room.jpg" alt="Home-style dining area" />
+              <figcaption class="photo-caption">Meals and daily routines</figcaption>
+            </figure>
+            <figure class="photo-card">
+              <img src="images/living-room.jpg" alt="Comfortable living room or activity area" />
+              <figcaption class="photo-caption">Comfortable shared spaces</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="availability-card">
+          <span class="availability-pulse">Open inquiries</span>
+          <strong>Now welcoming new residents</strong>
+          <p>Contact us to discuss fit, current openings, care needs, and the next steps for a visit or referral.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="trust-ribbon" aria-label="Care highlights">
+    <div class="container trust-grid">
+      <div class="trust-item">
+        <div class="trust-dot">🏡</div>
+        <div>
+          <div class="trust-label">Home-like setting</div>
+          <div class="trust-desc">A smaller environment with personal attention.</div>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-dot">🕒</div>
+        <div>
+          <div class="trust-label">Daily supervision</div>
+          <div class="trust-desc">Structure, reminders, and support throughout the day.</div>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-dot">🤝</div>
+        <div>
+          <div class="trust-label">Respectful care</div>
+          <div class="trust-desc">Dignity, patience, and privacy for every resident.</div>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-dot">📞</div>
+        <div>
+          <div class="trust-label">Family communication</div>
+          <div class="trust-desc">Clear updates for families and care partners.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="about">
+    <div class="container split">
+      <div class="story-card">
+        <img src="images/kitchen-table.jpg" alt="Kitchen or dining table prepared for residents" />
+        <div class="story-callout">
+          <strong>What families are looking for:</strong> not just a bed, but a place where their loved one is seen, supported, and treated with dignity.
+        </div>
+      </div>
+      <div>
+        <div class="section-eyebrow">Why our home feels different</div>
+        <h2 class="section-title">Care should feel personal, steady, and human.</h2>
+        <p class="section-intro">
+          Families often visit a website because they are trying to decide whether a home feels safe, calm, and trustworthy. This page should answer that question visually and emotionally before they ever call.
+        </p>
+        <div class="feature-list">
+          <div class="feature-row">
+            <div class="feature-icon">1</div>
+            <div>
+              <h3>Known personally</h3>
+              <p>Residents are supported by routine, familiarity, and a smaller home setting where individual needs are easier to notice.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-icon">2</div>
+            <div>
+              <h3>Supported daily</h3>
+              <p>Care may include personal care, meals, laundry, medication assistance, reminders, and supervision based on the resident’s care plan.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-icon">3</div>
+            <div>
+              <h3>Connected to family</h3>
+              <p>Families, guardians, and referral partners can reach out to discuss fit, availability, and next steps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="daily-life">
+    <div class="container">
+      <div class="section-eyebrow">Daily Life</div>
+      <h2 class="section-title">A simple rhythm families can understand.</h2>
+      <p class="section-intro">
+        This section helps visitors imagine the day-to-day experience: morning care, meals, supervision, activities, quiet time, and evening routines.
+      </p>
+
+      <div class="life-grid">
+        <article class="life-card">
+          <img src="images/morning-care.jpg" alt="Morning routine support" />
+          <div class="life-card-body">
+            <time>Morning</time>
+            <h3>Personal routines</h3>
+            <p>Support with hygiene, dressing, breakfast, reminders, and a calm start to the day.</p>
+          </div>
+        </article>
+        <article class="life-card">
+          <img src="images/meals.jpg" alt="Home-style meals" />
+          <div class="life-card-body">
+            <time>Midday</time>
+            <h3>Meals and supervision</h3>
+            <p>Home-style meals, daily structure, and support based on each resident’s needs.</p>
+          </div>
+        </article>
+        <article class="life-card">
+          <img src="images/activity.jpg" alt="Light activity or music engagement" />
+          <div class="life-card-body">
+            <time>Afternoon</time>
+            <h3>Engagement</h3>
+            <p>Conversation, music, light activities, family calls, birthdays, or seasonal moments.</p>
+          </div>
+        </article>
+        <article class="life-card">
+          <img src="images/evening-routine.jpg" alt="Quiet evening routine" />
+          <div class="life-card-body">
+            <time>Evening</time>
+            <h3>Comfort and safety</h3>
+            <p>Evening routines, medication reminders, quiet time, and overnight supervision.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="care-fit">
+    <div class="container">
+      <div class="section-eyebrow">Care Fit Guide</div>
+      <h2 class="section-title">Help visitors quickly see whether this home may fit.</h2>
+      <p class="section-intro">
+        Instead of making families read a long service list, organize care by the kind of support they are searching for.
+      </p>
+
+      <div class="tabs-wrap">
+        <div class="tab-buttons" role="tablist" aria-label="Care fit guide">
+          <button class="tab-btn active" data-tab="developmental" role="tab">
+            <strong>Developmental disability support</strong>
+            <span>Routine, supervision, personal care, and dignity.</span>
+          </button>
+          <button class="tab-btn" data-tab="dementia" role="tab">
+            <strong>Dementia-related support</strong>
+            <span>Calm structure, reminders, safety awareness.</span>
+          </button>
+          <button class="tab-btn" data-tab="daily" role="tab">
+            <strong>Daily living support</strong>
+            <span>Meals, medication assistance, laundry, hygiene.</span>
+          </button>
+        </div>
+
+        <div class="tab-panel active" id="developmental">
+          <h3>Support for adults with developmental disabilities</h3>
+          <p>For residents who benefit from steady routines, patient reminders, respectful supervision, and a smaller home environment.</p>
+          <div class="check-grid">
+            <div class="check-item">Daily structure and reminders</div>
+            <div class="check-item">Personal care assistance</div>
+            <div class="check-item">Meals, laundry, and household support</div>
+            <div class="check-item">Communication with families and representatives</div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="dementia">
+          <h3>Dementia-related care inquiries</h3>
+          <p>For families looking for a calmer residential setting where supervision, routine, and safety awareness matter.</p>
+          <div class="check-grid">
+            <div class="check-item">Supervision and redirection</div>
+            <div class="check-item">Comfortable daily routines</div>
+            <div class="check-item">Meal and medication assistance</div>
+            <div class="check-item">A smaller setting than a large facility</div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="daily">
+          <h3>Daily living support</h3>
+          <p>For adults who need practical help with everyday life in a safe, home-like environment.</p>
+          <div class="check-grid">
+            <div class="check-item">Bathing, dressing, and grooming support</div>
+            <div class="check-item">Home-style meals and snacks</div>
+            <div class="check-item">Medication reminders or assistance</div>
+            <div class="check-item">Laundry, housekeeping, and basic routines</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="admissions">
+    <div class="container">
+      <div class="section-eyebrow">Referrals & Admissions</div>
+      <h2 class="section-title">A clear next step builds confidence.</h2>
+      <p class="section-intro">
+        Families and referral partners need to understand how to start. A simple four-step process reduces friction and increases form submissions.
+      </p>
+
+      <div class="steps">
+        <article class="step-card">
+          <div class="step-num">1</div>
+          <h3>Submit inquiry</h3>
+          <p>Tell us who you are helping, the care needs, timeline, and best way to contact you.</p>
+        </article>
+        <article class="step-card">
+          <div class="step-num">2</div>
+          <h3>Discuss fit</h3>
+          <p>We talk through supervision, mobility, personal care, dementia or developmental disability needs.</p>
+        </article>
+        <article class="step-card">
+          <div class="step-num">3</div>
+          <h3>Schedule a visit</h3>
+          <p>When appropriate, families or representatives can tour and ask detailed questions.</p>
+        </article>
+        <article class="step-card">
+          <div class="step-num">4</div>
+          <h3>Plan next steps</h3>
+          <p>If the home is a good fit, we discuss documents, assessment needs, and move-in timing.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="events">
+    <div class="container">
+      <div class="section-eyebrow">Events & Announcements</div>
+      <h2 class="section-title">Make the site feel active, not abandoned.</h2>
+      <p class="section-intro">
+        Even small updates make the home feel alive. Add open house notices, holiday updates, family visiting reminders, birthday moments, and community announcements.
+      </p>
+
+      <div class="announce-grid">
+        <article class="announcement featured">
+          <div class="announcement-date">Current announcement</div>
+          <h3>Now accepting new resident inquiries</h3>
+          <p>We welcome inquiries from families, guardians, case managers, placement coordinators, and discharge planners looking for Adult Family Home care in Federal Way.</p>
+          <a href="#contact" class="btn-light">Submit a Referral or Question</a>
+        </article>
+        <article class="announcement">
+          <div class="announcement-date">Upcoming</div>
+          <h3>Schedule a visit</h3>
+          <p>Families and representatives may contact us to discuss availability and whether our home may be a good fit.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="location">
+    <div class="container">
+      <div class="section-eyebrow">Location & Contact</div>
+      <h2 class="section-title">Easy to find, easy to contact.</h2>
+      <p class="section-intro">
+        Because Adult Family Homes are residential, you may choose to show only the city publicly and provide the exact address after a scheduled visit.
+      </p>
+
+      <div class="location-grid">
+        <div class="map-card" aria-label="Map for Federal Way, Washington">
+          <iframe
+            class="map-frame"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Federal%20Way%2C%20WA&output=embed">
+          </iframe>
+        </div>
+
+        <div class="contact-card" id="contact">
+          <div class="section-eyebrow">Ask About Availability</div>
+          <h2 class="section-title" style="font-size: 2rem;">Start the conversation</h2>
+          <p class="contact-meta">
+            Share a few details and we will follow up to discuss care needs, current availability, and next steps.
+          </p>
+
+          <div class="contact-detail"><span>📍</span><div><strong>Location:</strong> Federal Way, Washington</div></div>
+          <div class="contact-detail"><span>☎</span><div><strong>Phone:</strong> [Your phone number]</div></div>
+          <div class="contact-detail"><span>✉</span><div><strong>Email:</strong> [Your email address]</div></div>
+
+          <form class="form-group" name="referral" method="POST" action="#" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <input class="form-input" type="text" name="name" placeholder="Your name" required autocomplete="name" />
+              <input class="form-input" type="tel" name="phone" placeholder="Phone number" autocomplete="tel" />
+            </div>
+            <input class="form-input" type="email" name="email" placeholder="Email address" required autocomplete="email" />
+            <select class="form-select" name="relationship" required>
+              <option value="">Your relationship to the resident</option>
+              <option>Family member</option>
+              <option>Guardian / representative</option>
+              <option>Case manager</option>
+              <option>Hospital / discharge planner</option>
+              <option>Placement coordinator</option>
+              <option>Other</option>
+            </select>
+            <select class="form-select" name="care_type">
+              <option value="">Type of care needed</option>
+              <option>Developmental disability support</option>
+              <option>Dementia support</option>
+              <option>Aging-related care</option>
+              <option>Personal care assistance</option>
+              <option>Medication assistance</option>
+              <option>Daily supervision</option>
+              <option>Other</option>
+            </select>
+            <input class="form-input" type="text" name="resident_info" placeholder="Resident's age and current city" />
+            <select class="form-select" name="timeline">
+              <option value="">Desired move-in timeline</option>
+              <option>Immediately</option>
+              <option>Within 30 days</option>
+              <option>1–3 months</option>
+              <option>Planning ahead</option>
+            </select>
+            <textarea class="form-textarea" name="care_needs" placeholder="Brief description of care needs"></textarea>
+            <button type="submit" class="form-submit">Submit Inquiry →</button>
+            <p class="form-note">This form is for general inquiries only and should not be used for emergencies or urgent medical needs. Replace this demo form action with Google Forms, Formspree, Netlify Forms, or another form handler before launch.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container faq-grid">
+      <div>
+        <div class="section-eyebrow">Questions Families Ask</div>
+        <h2 class="section-title">Answer concerns before the first call.</h2>
+        <p class="section-intro">
+          A short FAQ keeps people on the page longer and helps case managers understand whether to contact you.
+        </p>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>What type of residents may be a good fit?</summary>
+          <p>Adults who need a smaller residential care setting, daily supervision, personal care support, medication assistance, meals, structure, and respectful routines may be a good fit. Final fit depends on assessment, care needs, licensing requirements, and current availability.</p>
+        </details>
+        <details>
+          <summary>Do you support residents with developmental disabilities?</summary>
+          <p>We welcome inquiries for adults with developmental disabilities who need daily structure, supervision, personal care support, and a home-like environment.</p>
+        </details>
+        <details>
+          <summary>Do you accept dementia-related care inquiries?</summary>
+          <p>We welcome dementia-related inquiries and review each situation based on care needs, safety, supervision needs, and whether the home is appropriate for the resident.</p>
+        </details>
+        <details>
+          <summary>Can families or case managers schedule a visit?</summary>
+          <p>Yes. Families, guardians, representatives, case managers, placement coordinators, and discharge planners can contact us to discuss fit and schedule a visit when appropriate.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">ACaring Adult Home</div>
+        <div>Federal Way, Washington · Adult Family Home</div>
+      </div>
+      <div>
+        <a href="#daily-life">Daily Life</a>
+        <a href="#care-fit">Care Fit</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-mobile-cta" aria-label="Quick contact buttons">
+    <a href="#contact">Ask Availability</a>
+    <a href="tel:+1">Call</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    document.querySelectorAll('.tab-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const tabId = button.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+        button.classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      btn.textContent = 'Message received — please replace this demo handler before launch.';
+      btn.style.background = '#1d6558';
+      btn.disabled = true;
+    }
+  </script>
+</body>
+</html>
