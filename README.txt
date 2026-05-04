@@ -1,26 +1,38 @@
-ACaring Adult Home Multi-Page Website
+ACaring Adult Home — V2 Engaging Multi-Page Website
 
-Recreated from the original single-page HTML and split into separate pages.
+This ZIP was rebuilt from the v2 engaging single-page HTML concept and split into focused pages.
 
-Files:
-- index.html
-- about.html
-- care-services.html
-- who-we-serve.html
-- daily-life.html
-- events.html
-- referrals.html
-- contact.html
+Pages:
+- index.html — Warm home page with hero, photos, trust ribbon, and navigation paths
+- about.html — Place, trust, philosophy, and care values
+- daily-life.html — Routine and daily rhythm
+- care-fit.html — Interactive care fit tabs and care services
+- referrals.html — Referral/admissions flow and information needed
+- events.html — Announcements, updates, and activity ideas
+- location-contact.html — Google map, contact form, FAQ, and action point
+
+Supporting files:
 - styles.css
 - script.js
+- images/README.txt
 
-Next edits:
-1. Replace [Your email address] and [Your phone number].
-2. Add approved home photos into images/.
-3. Paste your Cloudflare Web Analytics beacon script in the <head> of every page.
-4. Replace the Federal Way map with exact address only if you want to publish it.
-5. Connect the contact form to Google Forms/Formspree/Basin/Jotform before launch.
+Before launch:
+1. Replace [Your phone number] and [Your email address].
+2. Replace the demo form handler with Google Forms, Formspree, Basin, Jotform, Netlify Forms, or another form endpoint.
+3. Paste your Cloudflare Web Analytics beacon script into the <head> of every HTML page.
+4. Add real approved photos into the images folder using these names:
+   - home-front.jpg
+   - dining-room.jpg
+   - living-room.jpg
+   - kitchen-table.jpg
+   - morning-care.jpg
+   - meals.jpg
+   - activity.jpg
+   - evening-routine.jpg
+5. Decide whether to keep the map as Federal Way only or publish the exact address.
+6. Deploy from a private GitHub repository to Cloudflare Pages.
 
 Cloudflare Pages settings:
-- Build command: blank
+- Framework preset: None / Static HTML
+- Build command: leave blank
 - Output directory: /

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Location & Contact | ACaring Adult Home</title>
+  <meta name="description" content="Contact ACaring Adult Home in Federal Way, Washington to ask about availability, care fit, or schedule a visit." />
+  <meta name="keywords" content="Adult Family Home Federal Way WA, developmental disability adult care Federal Way, dementia adult family home Federal Way, residential care home Federal Way, adult care home Washington State" />
+  <meta property="og:title" content="Location & Contact | ACaring Adult Home" />
+  <meta property="og:description" content="Contact ACaring Adult Home in Federal Way, Washington to ask about availability, care fit, or schedule a visit." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/home-front.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Cloudflare Web Analytics: paste your beacon script here before launch. -->
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">A<span>Caring</span> Adult Home</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="daily-life.html">Daily Life</a></li>
+        <li><a href="care-fit.html">Care Fit</a></li>
+        <li><a href="referrals.html">Admissions</a></li>
+        <li><a href="events.html">Updates</a></li>
+        <li><a href="location-contact.html" class="active">Location</a></li>
+      </ul>
+      <a href="location-contact.html#contact" class="nav-cta">Ask About Availability</a>
+      <button class="nav-mobile-btn" aria-label="Open menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <span class="hero-tag">Location & Contact</span>
+      <h1 class="page-title">Easy to find, easy to contact.</h1>
+      <p class="page-sub">Because Adult Family Homes are residential, you may choose to show only the city publicly and provide the exact address after a scheduled visit.</p>
+      
+    </div>
+  </header>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="location-grid">
+        <div class="map-card" aria-label="Map for Federal Way, Washington">
+          <iframe
+            class="map-frame"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Federal%20Way%2C%20WA&output=embed">
+          </iframe>
+        </div>
+
+        <div class="contact-card" id="contact">
+          <div class="section-eyebrow">Ask About Availability</div>
+          <h2 class="section-title" style="font-size: 2rem;">Start the conversation</h2>
+          <p class="contact-meta">
+            Share a few details and we will follow up to discuss care needs, current availability, and next steps.
+          </p>
+
+          <div class="contact-detail"><span>📍</span><div><strong>Location:</strong> Federal Way, Washington</div></div>
+          <div class="contact-detail"><span>☎</span><div><strong>Phone:</strong> [Your phone number]</div></div>
+          <div class="contact-detail"><span>✉</span><div><strong>Email:</strong> [Your email address]</div></div>
+
+          <form class="form-group" name="referral" method="POST" action="#" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <input class="form-input" type="text" name="name" placeholder="Your name" required autocomplete="name" />
+              <input class="form-input" type="tel" name="phone" placeholder="Phone number" autocomplete="tel" />
+            </div>
+            <input class="form-input" type="email" name="email" placeholder="Email address" required autocomplete="email" />
+            <select class="form-select" name="relationship" required>
+              <option value="">Your relationship to the resident</option>
+              <option>Family member</option>
+              <option>Guardian / representative</option>
+              <option>Case manager</option>
+              <option>Hospital / discharge planner</option>
+              <option>Placement coordinator</option>
+              <option>Other</option>
+            </select>
+            <select class="form-select" name="care_type">
+              <option value="">Type of care needed</option>
+              <option>Developmental disability support</option>
+              <option>Dementia support</option>
+              <option>Aging-related care</option>
+              <option>Personal care assistance</option>
+              <option>Medication assistance</option>
+              <option>Daily supervision</option>
+              <option>Other</option>
+            </select>
+            <input class="form-input" type="text" name="resident_info" placeholder="Resident's age and current city" />
+            <select class="form-select" name="timeline">
+              <option value="">Desired move-in timeline</option>
+              <option>Immediately</option>
+              <option>Within 30 days</option>
+              <option>1–3 months</option>
+              <option>Planning ahead</option>
+            </select>
+            <textarea class="form-textarea" name="care_needs" placeholder="Brief description of care needs"></textarea>
+            <button type="submit" class="form-submit">Submit Inquiry →</button>
+            <p class="form-note">This form is for general inquiries only and should not be used for emergencies or urgent medical needs. Replace this demo form action with Google Forms, Formspree, Netlify Forms, or another form handler before launch.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container faq-grid">
+      <div>
+        <div class="section-eyebrow">Questions Families Ask</div>
+        <h2 class="section-title">Answer concerns before the first call.</h2>
+        <p class="section-intro">
+          A short FAQ keeps people on the page longer and helps case managers understand whether to contact you.
+        </p>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>What type of residents may be a good fit?</summary>
+          <p>Adults who need a smaller residential care setting, daily supervision, personal care support, medication assistance, meals, structure, and respectful routines may be a good fit. Final fit depends on assessment, care needs, licensing requirements, and current availability.</p>
+        </details>
+        <details>
+          <summary>Do you support residents with developmental disabilities?</summary>
+          <p>We welcome inquiries for adults with developmental disabilities who need daily structure, supervision, personal care support, and a home-like environment.</p>
+        </details>
+        <details>
+          <summary>Do you accept dementia-related care inquiries?</summary>
+          <p>We welcome dementia-related inquiries and review each situation based on care needs, safety, supervision needs, and whether the home is appropriate for the resident.</p>
+        </details>
+        <details>
+          <summary>Can families or case managers schedule a visit?</summary>
+          <p>Yes. Families, guardians, representatives, case managers, placement coordinators, and discharge planners can contact us to discuss fit and schedule a visit when appropriate.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">ACaring Adult Home</div>
+        <div>Federal Way, Washington · Adult Family Home</div>
+      </div>
+      <div>
+        <a href="daily-life.html">Daily Life</a>
+        <a href="care-fit.html">Care Fit</a>
+        <a href="location-contact.html#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-mobile-cta" aria-label="Quick contact buttons">
+    <a href="location-contact.html#contact">Ask Availability</a>
+    <a href="tel:+1">Call</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

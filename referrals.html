@@ -4,19 +4,124 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Referrals & Admissions | ACaring Adult Home</title>
-  <meta name="description" content="Referral and admissions information." />
+  <meta name="description" content="Referral and admissions steps for families, guardians, case managers, discharge planners, and placement coordinators." />
+  <meta name="keywords" content="Adult Family Home Federal Way WA, developmental disability adult care Federal Way, dementia adult family home Federal Way, residential care home Federal Way, adult care home Washington State" />
+  <meta property="og:title" content="Referrals & Admissions | ACaring Adult Home" />
+  <meta property="og:description" content="Referral and admissions steps for families, guardians, case managers, discharge planners, and placement coordinators." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/home-front.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <!-- Paste Cloudflare Web Analytics beacon script here before launch. -->
+  <!-- Cloudflare Web Analytics: paste your beacon script here before launch. -->
 </head>
 <body>
-<nav class="nav"><a href="index.html" class="nav-logo">A<span>Caring</span> Adult Home</a><ul class="nav-links"><li><a href="about.html" class="">About</a></li>
-<li><a href="care-services.html" class="">Care & Services</a></li>
-<li><a href="who-we-serve.html" class="">Who We Serve</a></li>
-<li><a href="daily-life.html" class="">Daily Life</a></li>
-<li><a href="events.html" class="">Events</a></li>
-<li><a href="referrals.html" class="active-link">Referrals</a></li>
-<li><a href="contact.html" class="">Contact</a></li></ul><a href="contact.html" class="nav-cta">Ask About Availability</a><button class="nav-mobile-btn" aria-label="Open menu"><span></span><span></span><span></span></button></nav>
-<section class="page-hero"><div class="page-hero-inner"><span class="page-kicker">Referrals & Admissions</span><h1 class="page-title">A clear path for families and referral partners.</h1><p class="page-intro">We welcome conversations with families, guardians, case managers, placement coordinators, and discharge planners.</p></div></section><section class="content-section"><div class="content-inner"><div class="process-grid"><div class="process-card"><div class="process-num">1</div><h3>Submit inquiry</h3><p>Use the contact form or call to share basic resident needs and timeline.</p></div><div class="process-card"><div class="process-num">2</div><h3>Discuss fit</h3><p>We review care needs, supervision needs, mobility, and availability.</p></div><div class="process-card"><div class="process-num">3</div><h3>Schedule visit</h3><p>If appropriate, we arrange a call or visit to continue the conversation.</p></div><div class="process-card"><div class="process-num">4</div><h3>Next steps</h3><p>We discuss required documents, assessment needs, and move-in planning.</p></div></div></div></section><section class="content-section" style="background:var(--color-bg-secondary);"><div class="content-inner content-grid-2"><div class="text-card"><h2>Helpful information to share</h2><ul class="check-list"><li>Resident age and current living situation</li><li>Primary care needs and supervision needs</li><li>Mobility level and transfer needs</li><li>Medication support needs</li><li>Dementia or developmental disability support needs</li><li>Safety or behavioral concerns</li><li>Funding source, if known</li><li>Desired move-in timeline</li></ul></div><div class="text-card"><h2>Referral sources welcome</h2><p>We welcome inquiries from families, guardians, case managers, hospital discharge planners, placement coordinators, and community referral partners.</p><a href="contact.html" class="btn-primary" style="margin-top:.8rem;">Submit Referral or Question</a></div></div></section><footer class="footer"><div class="footer-logo">ACaring Adult Home</div><div class="footer-loc">Federal Way, Washington &nbsp;·&nbsp; Adult Family Home</div></footer><script src="script.js"></script></body></html>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">A<span>Caring</span> Adult Home</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="daily-life.html">Daily Life</a></li>
+        <li><a href="care-fit.html">Care Fit</a></li>
+        <li><a href="referrals.html" class="active">Admissions</a></li>
+        <li><a href="events.html">Updates</a></li>
+        <li><a href="location-contact.html">Location</a></li>
+      </ul>
+      <a href="location-contact.html#contact" class="nav-cta">Ask About Availability</a>
+      <button class="nav-mobile-btn" aria-label="Open menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <span class="hero-tag">Referrals & Admissions</span>
+      <h1 class="page-title">A clear next step builds confidence.</h1>
+      <p class="page-sub">Families and referral partners need to understand how to start. A simple process reduces friction and makes it easier to ask for availability.</p>
+      <div class="page-actions"><a href="location-contact.html#contact" class="btn-primary">Submit Inquiry →</a><a href="care-fit.html" class="btn-outline">Review Care Fit</a></div>
+    </div>
+  </header>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-eyebrow">How to Start</div>
+      <h2 class="section-title">A simple four-step path.</h2>
+      <p class="section-intro">
+        This gives families, guardians, case managers, placement coordinators, and discharge planners a clear way to move forward.
+      </p>
+
+      <div class="steps">
+        <article class="step-card">
+          <div class="step-num">1</div>
+          <h3>Submit inquiry</h3>
+          <p>Tell us who you are helping, the care needs, timeline, and best way to contact you.</p>
+        </article>
+        <article class="step-card">
+          <div class="step-num">2</div>
+          <h3>Discuss fit</h3>
+          <p>We talk through supervision, mobility, personal care, dementia or developmental disability needs.</p>
+        </article>
+        <article class="step-card">
+          <div class="step-num">3</div>
+          <h3>Schedule a visit</h3>
+          <p>When appropriate, families or representatives can tour and ask detailed questions.</p>
+        </article>
+        <article class="step-card">
+          <div class="step-num">4</div>
+          <h3>Plan next steps</h3>
+          <p>If the home is a good fit, we discuss documents, assessment needs, and move-in timing.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container referral-info-grid">
+      <div class="content-card">
+        <h2>Information that helps us understand fit</h2>
+        <ul class="simple-list">
+          <li>Resident age and current city</li>
+          <li>Current living situation</li>
+          <li>Primary care and supervision needs</li>
+          <li>Mobility and transfer needs</li>
+          <li>Dementia or developmental disability support needs</li>
+          <li>Medication support needs</li>
+          <li>Behavioral or safety concerns</li>
+          <li>Desired move-in timeline</li>
+        </ul>
+      </div>
+      <div class="content-card">
+        <h2>Referral partners welcome</h2>
+        <p>We welcome inquiries from families, guardians, case managers, hospital discharge planners, placement coordinators, representatives, and community referral partners.</p>
+        <p>This page should make the process feel organized and safe, rather than leaving people unsure what to do next.</p>
+        <a href="location-contact.html#contact" class="btn-primary">Submit a Referral or Question</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">ACaring Adult Home</div>
+        <div>Federal Way, Washington · Adult Family Home</div>
+      </div>
+      <div>
+        <a href="daily-life.html">Daily Life</a>
+        <a href="care-fit.html">Care Fit</a>
+        <a href="location-contact.html#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-mobile-cta" aria-label="Quick contact buttons">
+    <a href="location-contact.html#contact">Ask Availability</a>
+    <a href="tel:+1">Call</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
