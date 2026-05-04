@@ -1,1 +1,3 @@
-Place approved website photos here. Avoid resident photos unless you have written permission.
+These are placeholder JPGs so the site renders correctly before launch.
+Replace them with approved real photos using the same filenames.
+Avoid resident photos unless you have written permission.
