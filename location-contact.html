@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="styles.css" />
   <!-- Cloudflare Web Analytics: paste your beacon script here before launch. -->
 </head>
@@ -49,14 +50,8 @@
   <section class="section section-soft">
     <div class="container">
       <div class="location-grid">
-        <div class="map-card" aria-label="Map for Federal Way, Washington">
-          <iframe
-            class="map-frame"
-            loading="lazy"
-            allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=2401%20South%20359TH%20Street%2C%20Federal%20Way%2C%20WA%2098003&output=embed">
-          </iframe>
+        <div class="map-card" aria-label="Map showing both ACaring Adult Home locations in Federal Way, Washington">
+          <div id="federal-way-map" class="map-frame"></div>
         </div>
 
         <div class="contact-card" id="contact">
