@@ -12,9 +12,7 @@
   <meta property="og:image" content="images/home-front.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="styles.css" />
   <!-- Cloudflare Web Analytics: paste your beacon script here before launch. -->
 </head>
@@ -51,8 +49,40 @@
   <section class="section section-soft">
     <div class="container">
       <div class="location-grid">
-        <div class="map-card" aria-label="Map showing both ACaring Adult Home locations in Federal Way, Washington">
-          <div id="federal-way-map" class="map-frame"></div>
+        <div class="map-card" aria-label="Map for Federal Way, Washington">
+          <section class="locations-map-section" aria-labelledby="locations-map-title">
+            <div class="section-kicker">Our Federal Way Locations</div>
+
+            <div class="map-card map-card--two-locations">
+              <div class="map-card__content">
+                <div>
+                  <h2 id="locations-map-title">Two Caring Homes in Federal Way</h2>
+                  <p>
+                    ACaring Adult Home serves families from two quiet residential locations
+                    within Federal Way, Washington.
+                  </p>
+                </div>
+
+                <div class="map-location-list" aria-label="ACaring Adult Home locations">
+                  <div class="map-location-pill">
+                    <span class="map-pin-dot map-pin-dot--one"></span>
+                    <span>2401 S 359th St, Federal Way, WA 98003</span>
+                  </div>
+
+                  <div class="map-location-pill">
+                    <span class="map-pin-dot map-pin-dot--two"></span>
+                    <span>32634 49th Pl SW, Federal Way, WA 98023</span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="federal-way-map"
+                class="map-frame"
+                aria-label="Bird's-eye map showing both ACaring Adult Home locations in Federal Way"
+              ></div>
+            </div>
+          </section>
         </div>
 
         <div class="contact-card" id="contact">
@@ -62,9 +92,9 @@
             Share a few details and we will follow up to discuss care needs, current availability, and next steps.
           </p>
 
-          <div class="contact-detail"><span>📍</span><div><strong>Location:</strong> 2401 South 359TH Street, Federal Way, WA 98003</div></div>
-          <div class="contact-detail"><span>☎</span><div><strong>Phone:</strong> (253) 237-4030</div></div>
-          <div class="contact-detail"><span>✉</span><div><strong>Email:</strong> acaringadulthome@gmail.com</div></div>
+          <div class="contact-detail"><span>📍</span><div><strong>Location:</strong> Federal Way, Washington</div></div>
+          <div class="contact-detail"><span>☎</span><div><strong>Phone:</strong> [Your phone number]</div></div>
+          <div class="contact-detail"><span>✉</span><div><strong>Email:</strong> [Your email address]</div></div>
 
           <form class="form-group" name="referral" method="POST" action="#" onsubmit="handleSubmit(event)">
             <div class="form-row">
