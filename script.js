@@ -59,14 +59,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const map = L.map("federal-way-map", {
     scrollWheelZoom: false,
+    zoomControl: true
   });
 
   // Satellite / bird's-eye style.
-  L.tileLayer(
-    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+  const imagery = L.tileLayer(
+  "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
     {
-      attribution: "Tiles &copy; Esri",
+      attribution:
+        "Tiles &copy; Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community",
       maxZoom: 18
+    }
+  );
+  
+  const transportation = L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}",
+    {
+      attribution: "Transportation &copy; Esri, HERE, Garmin, OpenStreetMap contributors",
+      maxZoom: 18
+    }
+  );
+  
+  const labels = L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",
+    {
+      attribution: "Labels &copy; Esri",
+      maxZoom: 18
+    }
+  );
+  
+  const satelliteWithContext = L.layerGroup([
+    imagery,
+    transportation,
+    labels
+  ]);
+
+  roadMap.addTo(map);
+
+  L.control.layers(
+    {
+      "Road map": roadMap,
+      "Satellite + labels": satelliteWithContext
+    },
+    null,
+    {
+      collapsed: false
     }
   ).addTo(map);
 
