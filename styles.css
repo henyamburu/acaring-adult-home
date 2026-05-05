@@ -453,6 +453,12 @@
       z-index: 1;
     }
 
+
+    .custom-map-marker-wrap {
+      background: transparent;
+      border: 0;
+    }
+
     .custom-map-marker {
       width: 38px;
       height: 38px;
@@ -462,6 +468,8 @@
       place-items: center;
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
       border: 3px solid #fff;
+      position: relative;
+      z-index: 500;
     }
 
     .custom-map-marker span {

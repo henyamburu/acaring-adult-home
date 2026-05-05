@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       label: "1",
       name: "ACaring Adult Home",
       address: "2401 S 359th St, Federal Way, WA 98003",
+      coords: [47.2828, -122.3032],
       searchUrl:
         "https://www.google.com/maps/search/?api=1&query=2401%20S%20359th%20St%2C%20Federal%20Way%2C%20WA%2098003",
       markerClass: "custom-map-marker--one"
@@ -49,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
       label: "2",
       name: "ACaring Adult Home II",
       address: "32634 49th Pl SW, Federal Way, WA 98023",
+      coords: [47.3105, -122.3972],
       searchUrl:
         "https://www.google.com/maps/search/?api=1&query=32634%2049th%20Pl%20SW%2C%20Federal%20Way%2C%20WA%2098023",
       markerClass: "custom-map-marker--two"
@@ -73,47 +75,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const markerLayer = L.layerGroup().addTo(map);
   const bounds = [];
 
-  async function geocodeAddress(place) {
-    const endpoint =
-      "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=" +
-      encodeURIComponent(place.address);
-
-    const response = await fetch(endpoint, {
-      headers: {
-        "Accept-Language": "en-US"
-      }
-    });
-
-    if (!response.ok) {
-      throw new Error("Geocoding failed for " + place.address);
-    }
-
-    const data = await response.json();
-
-    if (!data || !data.length) {
-      throw new Error("No map result found for " + place.address);
-    }
-
-    return {
-      lat: parseFloat(data[0].lat),
-      lng: parseFloat(data[0].lon)
-    };
-  }
-
-  function createMarker(place, lat, lng) {
+  function createMarker(place) {
     const icon = L.divIcon({
-      className: "",
+      className: "custom-map-marker-wrap",
       html: `
-        <div class="custom-map-marker ${place.markerClass}">
+        <div class="custom-map-marker ${place.markerClass}" aria-hidden="true">
           <span>${place.label}</span>
         </div>
       `,
-      iconSize: [38, 38],
-      iconAnchor: [19, 38],
-      popupAnchor: [0, -36]
+      iconSize: [44, 44],
+      iconAnchor: [22, 44],
+      popupAnchor: [0, -40]
     });
 
-    L.marker([lat, lng], { icon })
+    L.marker(place.coords, { icon })
       .addTo(markerLayer)
       .bindPopup(`
         <strong>${place.name}</strong><br>
@@ -123,33 +98,28 @@ document.addEventListener("DOMContentLoaded", function () {
         </a>
       `);
 
-    bounds.push([lat, lng]);
+    bounds.push(place.coords);
   }
 
-  async function buildMap() {
-    try {
-      for (const place of locations) {
-        const coords = await geocodeAddress(place);
-        createMarker(place, coords.lat, coords.lng);
-      }
+  locations.forEach(createMarker);
 
-      if (bounds.length > 1) {
-        map.fitBounds(bounds, {
-          padding: [70, 70],
-          maxZoom: 12
-        });
-      } else if (bounds.length === 1) {
-        map.setView(bounds[0], 12);
-      } else {
-        map.setView([47.3223, -122.3126], 11);
-      }
-    } catch (error) {
-      console.error(error);
+  if (bounds.length > 1) {
+    map.fitBounds(bounds, {
+      padding: [80, 80],
+      maxZoom: 12
+    });
+  } else {
+    map.setView([47.3223, -122.3126], 11);
+  }
 
-      // Fallback: Federal Way wide view if address lookup fails.
-      map.setView([47.3223, -122.3126], 11);
+  // Helps Leaflet calculate properly when the map sits inside responsive grids/cards.
+  setTimeout(function () {
+    map.invalidateSize();
+    if (bounds.length > 1) {
+      map.fitBounds(bounds, {
+        padding: [80, 80],
+        maxZoom: 12
+      });
     }
-  }
-
-  buildMap();
+  }, 150);
 });
