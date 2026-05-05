@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="styles.css" />
   <!-- Cloudflare Web Analytics: paste your beacon script here before launch. -->
 </head>
@@ -49,7 +50,7 @@
   <section class="section section-soft">
     <div class="container">
       <div class="location-grid">
-        <div class="map-card" aria-label="Map for Federal Way, Washington">
+        <div class="map-shell" aria-label="Map for Federal Way, Washington">
           <section class="locations-map-section" aria-labelledby="locations-map-title">
             <div class="section-kicker">Our Federal Way Locations</div>
 
@@ -187,6 +188,7 @@
     <a href="tel:+1">Call</a>
   </div>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

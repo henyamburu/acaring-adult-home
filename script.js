@@ -29,7 +29,12 @@ function handleSubmit(e) {
 document.addEventListener("DOMContentLoaded", function () {
   const mapEl = document.getElementById("federal-way-map");
 
-  if (!mapEl || typeof L === "undefined") return;
+  if (!mapEl) return;
+
+  if (typeof L === "undefined") {
+    console.warn("Leaflet is not loaded. Add the Leaflet CSS/JS includes to location-contact.html.");
+    return;
+  }
 
   const locations = [
     {
