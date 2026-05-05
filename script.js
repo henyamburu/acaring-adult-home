@@ -66,8 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
   L.tileLayer(
     "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
     {
-      attribution:
-        "Tiles &copy; Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community",
+      attribution: "Tiles &copy; Esri",
       maxZoom: 18
     }
   ).addTo(map);
