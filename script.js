@@ -25,65 +25,126 @@ function handleSubmit(e) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", async function () {
-    const map = L.map("federal-way-map", {
-      scrollWheelZoom: false
+
+document.addEventListener("DOMContentLoaded", function () {
+  const mapEl = document.getElementById("federal-way-map");
+
+  if (!mapEl || typeof L === "undefined") return;
+
+  const locations = [
+    {
+      label: "1",
+      name: "ACaring Adult Home",
+      address: "2401 S 359th St, Federal Way, WA 98003",
+      searchUrl:
+        "https://www.google.com/maps/search/?api=1&query=2401%20S%20359th%20St%2C%20Federal%20Way%2C%20WA%2098003",
+      markerClass: "custom-map-marker--one"
+    },
+    {
+      label: "2",
+      name: "ACaring Adult Home II",
+      address: "32634 49th Pl SW, Federal Way, WA 98023",
+      searchUrl:
+        "https://www.google.com/maps/search/?api=1&query=32634%2049th%20Pl%20SW%2C%20Federal%20Way%2C%20WA%2098023",
+      markerClass: "custom-map-marker--two"
+    }
+  ];
+
+  const map = L.map("federal-way-map", {
+    scrollWheelZoom: false,
+    zoomControl: true
+  });
+
+  // Satellite / bird's-eye style.
+  L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+    {
+      attribution:
+        "Tiles &copy; Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community",
+      maxZoom: 18
+    }
+  ).addTo(map);
+
+  const markerLayer = L.layerGroup().addTo(map);
+  const bounds = [];
+
+  async function geocodeAddress(place) {
+    const endpoint =
+      "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=" +
+      encodeURIComponent(place.address);
+
+    const response = await fetch(endpoint, {
+      headers: {
+        "Accept-Language": "en-US"
+      }
     });
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-
-    const locations = [
-      {
-        name: "ACaring Adult Home",
-        address: "2401 South 359TH Street, Federal Way, WA 98003"
-      },
-      {
-        name: "ACaring Adult Home II",
-        address: "32634 49TH PL SW, Federal Way, WA 98023"
-      }
-    ];
-
-    const bounds = [];
-
-    for (const place of locations) {
-      const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=${encodeURIComponent(place.address)}`;
-
-      try {
-        const response = await fetch(url, {
-          headers: { "Accept-Language": "en-US" }
-        });
-        const data = await response.json();
-
-        if (data && data.length) {
-          const lat = parseFloat(data[0].lat);
-          const lon = parseFloat(data[0].lon);
-
-          L.marker([lat, lon])
-            .addTo(map)
-            .bindPopup(`
-              <strong>${place.name}</strong><br>
-              ${place.address}
-            `);
-
-          bounds.push([lat, lon]);
-        }
-      } catch (error) {
-        console.error("Geocoding error for:", place.address, error);
-      }
+    if (!response.ok) {
+      throw new Error("Geocoding failed for " + place.address);
     }
 
-    if (bounds.length) {
-      map.fitBounds(bounds, { padding: [50, 50] });
+    const data = await response.json();
 
-      // Keep the map at a higher / wider viewpoint (bird's-eye feel)
-      if (map.getZoom() > 12) {
-        map.setZoom(12);
+    if (!data || !data.length) {
+      throw new Error("No map result found for " + place.address);
+    }
+
+    return {
+      lat: parseFloat(data[0].lat),
+      lng: parseFloat(data[0].lon)
+    };
+  }
+
+  function createMarker(place, lat, lng) {
+    const icon = L.divIcon({
+      className: "",
+      html: `
+        <div class="custom-map-marker ${place.markerClass}">
+          <span>${place.label}</span>
+        </div>
+      `,
+      iconSize: [38, 38],
+      iconAnchor: [19, 38],
+      popupAnchor: [0, -36]
+    });
+
+    L.marker([lat, lng], { icon })
+      .addTo(markerLayer)
+      .bindPopup(`
+        <strong>${place.name}</strong><br>
+        ${place.address}<br>
+        <a href="${place.searchUrl}" target="_blank" rel="noopener">
+          Open in Google Maps
+        </a>
+      `);
+
+    bounds.push([lat, lng]);
+  }
+
+  async function buildMap() {
+    try {
+      for (const place of locations) {
+        const coords = await geocodeAddress(place);
+        createMarker(place, coords.lat, coords.lng);
       }
-    } else {
-      // Fallback center on Federal Way
+
+      if (bounds.length > 1) {
+        map.fitBounds(bounds, {
+          padding: [70, 70],
+          maxZoom: 12
+        });
+      } else if (bounds.length === 1) {
+        map.setView(bounds[0], 12);
+      } else {
+        map.setView([47.3223, -122.3126], 11);
+      }
+    } catch (error) {
+      console.error(error);
+
+      // Fallback: Federal Way wide view if address lookup fails.
       map.setView([47.3223, -122.3126], 11);
     }
-  });
+  }
+
+  buildMap();
+});
