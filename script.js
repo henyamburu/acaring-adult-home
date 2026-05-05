@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const map = L.map("federal-way-map", {
     scrollWheelZoom: false,
-    zoomControl: true
   });
 
   // Satellite / bird's-eye style.
