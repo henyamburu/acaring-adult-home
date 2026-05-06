@@ -61,24 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollWheelZoom: false,
     zoomControl: true
   });
-
-  // Satellite / bird's-eye style.
-  const imagery = L.tileLayer(
-  "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-    {
-      attribution:
-        "Tiles &copy; Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community",
-      maxZoom: 18
-    }
-  );
-  
-  const transportation = L.tileLayer(
-    "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}",
-    {
-      attribution: "Transportation &copy; Esri, HERE, Garmin, OpenStreetMap contributors",
-      maxZoom: 18
-    }
-  );
   
   // Road/context map — better default for visitor orientation.
   const roadMap = L.tileLayer(
@@ -87,7 +69,9 @@ document.addEventListener("DOMContentLoaded", function () {
       attribution: "Tiles &copy; Esri",
       maxZoom: 18
     }
-  ).addTo(map);
+  );
+
+  roadMap.addTo(map)
 
   const markerLayer = L.layerGroup().addTo(map);
   const bounds = [];
