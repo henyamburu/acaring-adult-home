@@ -80,30 +80,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   );
   
-  const labels = L.tileLayer(
-    "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",
+  // Road/context map — better default for visitor orientation.
+  const roadMap = L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
     {
-      attribution: "Labels &copy; Esri",
+      attribution: "Tiles &copy; Esri",
       maxZoom: 18
-    }
-  );
-  
-  const satelliteWithContext = L.layerGroup([
-    imagery,
-    transportation,
-    labels
-  ]);
-
-  roadMap.addTo(map);
-
-  L.control.layers(
-    {
-      "Road map": roadMap,
-      "Satellite + labels": satelliteWithContext
-    },
-    null,
-    {
-      collapsed: false
     }
   ).addTo(map);
 
