@@ -62,7 +62,15 @@ document.addEventListener("DOMContentLoaded", function () {
     zoomControl: true
   });
   
-  // Satellite / bird's-eye style.
+  // Road/context map — better default for visitor orientation.
+  const roadMap = L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+    {
+      attribution: "Tiles &copy; Esri",
+      maxZoom: 18
+    }
+  );
+  
   const imagery = L.tileLayer(
     "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
     {
