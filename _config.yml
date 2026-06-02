@@ -1,2 +1,6 @@
 exclude:
   - docs
+  - "*.md"
+  - "*.txt"
+  - "**/*.md"
+  - "**/*.txt"
