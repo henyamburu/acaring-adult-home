@@ -4,4 +4,4 @@ compatibility_date = "2026-06-02"
 
 [[send_email]]
 name = "EMAIL"
-allowed_sender_addresses = ["website@acaringadulthome.com"]
+destination_address = "inquiries@acaringadulthome.com"
