@@ -49,14 +49,13 @@
 
   <section class="section section-soft">
     <div class="container">
-      <div class="location-grid">
+      <div class="location-grid location-contact-grid">
         <div class="map-shell" aria-label="Map for Federal Way, Washington">
           <section class="locations-map-section" aria-labelledby="locations-map-title">
-            <div class="section-kicker">Our Federal Way Locations</div>
-
             <div class="map-card map-card--two-locations">
               <div class="map-card__content">
                 <div>
+                  <div class="section-kicker">Our Federal Way Locations</div>
                   <h2 id="locations-map-title">Two Caring Homes in Federal Way</h2>
                   <p>
                     ACaring Adult Home serves families from two quiet residential locations
@@ -119,44 +118,69 @@
             </div>
           </div>
           <div class="contact-detail"><span>☎</span><div><strong>Phone:</strong> <a href="tel:+12532374030">(253) 237-4030</a></div></div>
-          <div class="contact-detail"><span>✉</span><div><strong>Email:</strong> <a href="mailto:acaringadulthome@gmail.com">acaringadulthome@gmail.com</a></div></div>
+          <div class="contact-detail"><span>✉</span><div><strong>Email:</strong> <a href="mailto:inquiries@acaringadulthome.com">inquiries@acaringadulthome.com</a></div></div>
 
-          <form class="form-group" name="referral" method="POST" action="#" onsubmit="handleSubmit(event)">
-            <div class="form-row">
-              <input class="form-input" type="text" name="name" placeholder="Your name" required autocomplete="name" />
-              <input class="form-input" type="tel" name="phone" placeholder="Phone number" autocomplete="tel" />
+          <form id="contact-form" class="form-group" name="referral" method="POST" action="/api/contact" onsubmit="handleSubmit(event)">
+            <p class="privacy-callout">
+              Please use this form to start a general conversation with us. For privacy, do not include detailed medical history,
+              medication lists, Social Security numbers, Medicaid or Medicare numbers, or other sensitive personal information.
+              We can discuss next steps directly by phone.
+            </p>
+            <div class="honeypot" aria-hidden="true">
+              <label for="website">Website</label>
+              <input id="website" class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" />
             </div>
-            <input class="form-input" type="email" name="email" placeholder="Email address" required autocomplete="email" />
-            <select class="form-select" name="relationship" required>
-              <option value="">Your relationship to the resident</option>
-              <option>Family member</option>
-              <option>Guardian / representative</option>
-              <option>Case manager</option>
-              <option>Hospital / discharge planner</option>
-              <option>Placement coordinator</option>
-              <option>Other</option>
-            </select>
-            <select class="form-select" name="care_type">
-              <option value="">Type of care needed</option>
-              <option>Developmental disability support</option>
-              <option>Dementia support</option>
-              <option>Aging-related care</option>
-              <option>Personal care assistance</option>
-              <option>Medication assistance</option>
-              <option>Daily supervision</option>
-              <option>Other</option>
-            </select>
-            <input class="form-input" type="text" name="resident_info" placeholder="Resident's age and current city" />
-            <select class="form-select" name="timeline">
-              <option value="">Desired move-in timeline</option>
-              <option>Immediately</option>
-              <option>Within 30 days</option>
-              <option>1–3 months</option>
-              <option>Planning ahead</option>
-            </select>
-            <textarea class="form-textarea" name="care_needs" placeholder="Brief description of care needs"></textarea>
+            <div class="form-row">
+              <label class="form-label">Your name
+                <input class="form-input" type="text" name="name" required autocomplete="name" />
+              </label>
+              <label class="form-label">Phone number
+                <input class="form-input" type="tel" name="phone" required autocomplete="tel" />
+              </label>
+            </div>
+            <label class="form-label">Email address
+              <input class="form-input" type="email" name="email" required autocomplete="email" />
+            </label>
+            <div class="form-row">
+              <label class="form-label">Preferred contact method
+                <select class="form-select" name="preferred_contact">
+                  <option value="">Select one</option>
+                  <option>Phone</option>
+                  <option>Email</option>
+                  <option>Either phone or email</option>
+                </select>
+              </label>
+              <label class="form-label">I am a
+                <select class="form-select" name="inquiry_role" required>
+                  <option value="">Select one</option>
+                  <option>Family member</option>
+                  <option>Placement coordinator</option>
+                  <option>Case manager</option>
+                  <option>Community partner</option>
+                  <option>Other</option>
+                </select>
+              </label>
+            </div>
+            <label class="form-label">Inquiry type
+              <select class="form-select" name="inquiry_type" required>
+                <option value="">Select one</option>
+                <option>Availability</option>
+                <option>Schedule a tour</option>
+                <option>Referral discussion</option>
+                <option>General question</option>
+              </select>
+            </label>
+            <label class="form-label">Short message
+              <textarea class="form-textarea" name="message" required maxlength="2000" placeholder="Briefly tell us how we can help. Please do not include sensitive medical or identity information."></textarea>
+            </label>
+            <p class="form-note">
+              Please do not include Social Security numbers, Medicaid numbers, medical records,
+              detailed diagnosis information, or other sensitive health information in this form.
+              This form is for general inquiries only. We will follow up directly if more details are needed.
+            </p>
             <button type="submit" class="form-submit">Submit Inquiry →</button>
-            <p class="form-note">This form is for general inquiries only and should not be used for emergencies or urgent medical needs. Replace this demo form action with Google Forms, Formspree, Netlify Forms, or another form handler before launch.</p>
+            <p class="form-status" role="status" aria-live="polite"></p>
+            <p class="form-note">For emergencies or urgent medical needs, call 911 or the appropriate care provider directly.</p>
           </form>
         </div>
       </div>

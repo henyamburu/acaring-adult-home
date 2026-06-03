@@ -152,3 +152,26 @@ Testing performed:
 Assumptions:
 Next recommended step:
 ```
+
+## Git, Commit, and Pull Request Rule
+
+Codex may make code, content, documentation, or configuration changes without asking for permission each time, as long as the requested task is clear and the changes stay within the stated scope.
+
+Codex is allowed to:
+
+- Create new files
+- Modify existing files
+- Delete files only when clearly justified by the task
+- Stage changes
+- Commit changes
+- Push a feature branch, when repository access allows it
+
+Codex must **not** push directly to `main`, `master`, or any protected production branch.
+
+Codex must always work from a separate branch using a clear branch name, for example:
+
+```text
+codex/contact-form-workflow
+codex/events-page-update
+codex/referral-page-improvements
+codex/docs-update
