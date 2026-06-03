@@ -888,6 +888,7 @@
 ───────────────────────────────────────────── */
 .map-shell {
   min-width: 0;
+  display: flex;
 }
 
 .location-contact-grid {
@@ -903,13 +904,15 @@
   display: flex;
   margin: 0;
   height: 100%;
+  width: 100%;
 }
 
 .location-grid .map-card--two-locations {
   display: flex;
   flex-direction: column;
   grid-template-columns: 1fr;
-  height: 100%;
+  flex: 1 1 auto;
+  height: auto;
   min-height: 0;
   width: 100%;
 }
@@ -931,7 +934,8 @@
 .location-grid .contact-card {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: auto;
+  min-height: 100%;
 }
 
 .location-grid .form-group {
