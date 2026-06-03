@@ -401,7 +401,24 @@
       cursor: pointer; font-family: var(--font-sans); transition: 0.2s;
     }
     .form-submit:hover { background: var(--color-green-dark); transform: translateY(-1px); }
+    .form-submit:disabled { cursor: wait; opacity: 0.72; transform: none; }
+    .form-status {
+      color: var(--color-green-dark);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.5;
+      min-height: 1.5em;
+    }
+    .form-status--success { color: var(--color-green-dark); }
+    .form-status--error { color: #9b2c2c; }
     .form-note { font-size: 11.5px; color: var(--color-text-muted); line-height: 1.55; margin-top: 2px; }
+    .hp-field {
+      position: absolute;
+      left: -10000px;
+      height: 1px;
+      overflow: hidden;
+      width: 1px;
+    }
 
     /* FAQ */
     .faq-grid {
@@ -805,45 +822,46 @@
           </p>
 
           <div class="contact-detail"><span>📍</span><div><strong>Location:</strong> Federal Way, Washington</div></div>
-          <div class="contact-detail"><span>☎</span><div><strong>Phone:</strong> [Your phone number]</div></div>
-          <div class="contact-detail"><span>✉</span><div><strong>Email:</strong> [Your email address]</div></div>
+          <div class="contact-detail"><span>☎</span><div><strong>Phone:</strong> <a href="tel:+12532374030">(253) 237-4030</a></div></div>
+          <div class="contact-detail"><span>✉</span><div><strong>Email:</strong> <a href="mailto:inquiries@acaringadulthome.com">inquiries@acaringadulthome.com</a></div></div>
 
-          <form class="form-group" name="referral" method="POST" action="#" onsubmit="handleSubmit(event)">
+          <form id="contact-form" class="form-group" name="referral" method="POST" action="/api/contact" onsubmit="handleSubmit(event)">
+            <p class="form-note">
+              Please do not include Social Security numbers, Medicaid numbers, medical records,
+              detailed diagnosis information, or other sensitive health information in this form.
+              This form is for general inquiries only. We will follow up directly if more details are needed.
+            </p>
+            <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true" />
             <div class="form-row">
-              <input class="form-input" type="text" name="name" placeholder="Your name" required autocomplete="name" />
-              <input class="form-input" type="tel" name="phone" placeholder="Phone number" autocomplete="tel" />
+              <input class="form-input" type="text" name="name" placeholder="Your name" required autocomplete="name" maxlength="100" />
+              <input class="form-input" type="tel" name="phone" placeholder="Phone number" required autocomplete="tel" maxlength="50" />
             </div>
-            <input class="form-input" type="email" name="email" placeholder="Email address" required autocomplete="email" />
-            <select class="form-select" name="relationship" required>
-              <option value="">Your relationship to the resident</option>
+            <input class="form-input" type="email" name="email" placeholder="Email address" required autocomplete="email" maxlength="150" />
+            <select class="form-select" name="inquiry_role" required>
+              <option value="">I am a</option>
               <option>Family member</option>
-              <option>Guardian / representative</option>
-              <option>Case manager</option>
-              <option>Hospital / discharge planner</option>
               <option>Placement coordinator</option>
+              <option>Case manager</option>
+              <option>Community partner</option>
               <option>Other</option>
             </select>
-            <select class="form-select" name="care_type">
-              <option value="">Type of care needed</option>
-              <option>Developmental disability support</option>
-              <option>Dementia support</option>
-              <option>Aging-related care</option>
-              <option>Personal care assistance</option>
-              <option>Medication assistance</option>
-              <option>Daily supervision</option>
-              <option>Other</option>
+            <select class="form-select" name="inquiry_type" required>
+              <option value="">Inquiry type</option>
+              <option>Availability</option>
+              <option>Schedule a tour</option>
+              <option>Referral discussion</option>
+              <option>General question</option>
             </select>
-            <input class="form-input" type="text" name="resident_info" placeholder="Resident's age and current city" />
-            <select class="form-select" name="timeline">
-              <option value="">Desired move-in timeline</option>
-              <option>Immediately</option>
-              <option>Within 30 days</option>
-              <option>1–3 months</option>
-              <option>Planning ahead</option>
+            <select class="form-select" name="preferred_contact">
+              <option value="">Preferred contact method</option>
+              <option>Phone</option>
+              <option>Email</option>
+              <option>Either phone or email</option>
             </select>
-            <textarea class="form-textarea" name="care_needs" placeholder="Brief description of care needs"></textarea>
+            <textarea class="form-textarea" name="message" required maxlength="2000" placeholder="Briefly tell us how we can help. Please do not include sensitive medical or identity information."></textarea>
             <button type="submit" class="form-submit">Submit Inquiry →</button>
-            <p class="form-note">This form is for general inquiries only and should not be used for emergencies or urgent medical needs. Replace this demo form action with Google Forms, Formspree, Netlify Forms, or another form handler before launch.</p>
+            <p class="form-status" role="status" aria-live="polite"></p>
+            <p class="form-note">For emergencies or urgent medical needs, call 911 or the appropriate care provider directly.</p>
           </form>
         </div>
       </div>
@@ -914,12 +932,57 @@
       });
     });
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('.form-submit');
-      btn.textContent = 'Message received — please replace this demo handler before launch.';
-      btn.style.background = '#1d6558';
-      btn.disabled = true;
+      const form = e.target;
+      const btn = form.querySelector('.form-submit');
+      const status = form.querySelector('.form-status');
+      const formData = new FormData(form);
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      if (status) {
+        status.textContent = '';
+        status.classList.remove('form-status--success', 'form-status--error');
+      }
+
+      if (btn) {
+        btn.disabled = true;
+        btn.dataset.originalText = btn.dataset.originalText || btn.textContent;
+        btn.textContent = 'Sending...';
+      }
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method || 'POST',
+          body: formData
+        });
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok || !result.ok) {
+          throw new Error(result.message || 'Contact form submission failed.');
+        }
+
+        form.reset();
+        if (status) {
+          status.textContent = 'Thank you. Your inquiry has been sent. We will follow up as soon as possible.';
+          status.classList.add('form-status--success');
+        }
+      } catch (error) {
+        console.error(error);
+        if (status) {
+          status.textContent = 'We could not send your inquiry from the website. Please call us or email inquiries@acaringadulthome.com directly.';
+          status.classList.add('form-status--error');
+        }
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = btn.dataset.originalText || 'Submit Inquiry →';
+        }
+      }
     }
   </script>
 </body>
