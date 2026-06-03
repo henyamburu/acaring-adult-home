@@ -1,0 +1,7 @@
+name = "acaring-adult-home"
+pages_build_output_dir = "."
+compatibility_date = "2026-06-02"
+
+[[send_email]]
+name = "EMAIL"
+allowed_sender_addresses = ["website@acaringadulthome.com"]

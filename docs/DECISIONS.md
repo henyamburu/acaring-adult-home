@@ -1,6 +1,6 @@
 # Decisions — ACaring Adult Home Website
 
-_Last updated: 2026-05-30_
+_Last updated: 2026-06-02_
 
 Use this file to record decisions that affect the site structure, content model, privacy posture, deployment, or future maintainability.
 
@@ -13,12 +13,13 @@ Use this file to record decisions that affect the site structure, content model,
 | 2026-05-30 | Avoid resident-identifying images unless written authorization and business approval exist | Protects resident dignity and reduces privacy risk | Active |
 | 2026-05-30 | Build the events page as static cards first | Avoids overengineering before content volume exists | Active |
 | 2026-05-30 | Use Cloudflare Analytics or a privacy-light analytics approach during early phase | Enough to detect traffic without building a complex marketing stack | Active |
+| 2026-06-02 | Use a Cloudflare Pages Function with an `EMAIL` binding for website inquiries | Keeps form submission server-side, avoids unreliable `mailto:` behavior, and sends notifications to the approved inquiry alias | Active |
+| 2026-06-02 | Use `website@acaringadulthome.com` as the verified Cloudflare sender address for inquiry notifications | Sender has been enabled in Cloudflare and matches the configured `EMAIL` binding | Active |
 
 ## Pending decisions
 
 | Decision needed | Options | Recommendation |
 |---|---|---|
-| Form provider | Cloudflare Worker/Pages Function, Formspree, Basin, Google Forms, mailto fallback | Prefer a real form-to-email workflow with spam protection; avoid `mailto` as final solution |
 | Inquiry storage | Email only, email + spreadsheet, CRM | Start with email; later add spreadsheet/CRM if volume grows |
 | Events data model | Hardcoded HTML cards, JSON file rendered by JS, CMS | Start hardcoded; move to JSON when updates become frequent |
 | Public locations | One public address, two public addresses, service area only | Confirm business preference before publishing both locations prominently |

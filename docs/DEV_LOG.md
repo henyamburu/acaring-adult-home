@@ -1,10 +1,47 @@
 # Development Log — ACaring Adult Home Website
 
-_Last updated: 2026-05-30_
+_Last updated: 2026-06-02_
 
 Use this file as the running project memory for Codex and future development sessions.
 
 ## Log entries
+
+### 2026-06-02 - Connected location contact form to Cloudflare endpoint
+
+**Changed:**
+
+- Replaced the `mailto:` contact form behavior with a `POST /api/contact` submission.
+- Added a Cloudflare Pages Function that validates inquiry fields, blocks honeypot spam submissions, and sends email through the `EMAIL` binding.
+- Updated the public inquiry fallback email to `inquiries@acaringadulthome.com`.
+- Kept the form privacy-safe by requiring only general inquiry fields and warning against sensitive medical or identity details.
+- Added minimal Wrangler configuration for the Cloudflare email binding.
+
+**Files modified:**
+
+- `location-contact.html`
+- `script.js`
+- `styles.css`
+- `functions/api/contact.js`
+- `wrangler.toml`
+- `docs/DECISIONS.md`
+- `docs/DEV_LOG.md`
+
+**Reason:**
+
+The production form should work for visitors without opening a local email client and should route inquiry notifications server-side through Cloudflare.
+
+**Testing performed:**
+
+- `node --check script.js`
+- `node --check functions/api/contact.js`
+
+**Follow-up needed:**
+
+- Deploy to Cloudflare Pages and submit a live test inquiry to confirm delivery to `inquiries@acaringadulthome.com`.
+
+**Cloudflare setup update:**
+
+- `website@acaringadulthome.com` has been enabled in Cloudflare as the sender address.
 
 ### 2026-05-30 — Documentation pack created
 

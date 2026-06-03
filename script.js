@@ -15,16 +15,58 @@ document.querySelectorAll('.tab-btn').forEach(button => {
   });
 });
 
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('.form-submit');
+  const form = e.target;
+  const btn = form.querySelector('.form-submit');
+  const status = form.querySelector('.form-status');
+  const formData = new FormData(form);
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  if (status) {
+    status.textContent = '';
+    status.classList.remove('form-status--success', 'form-status--error');
+  }
+
   if (btn) {
-    btn.textContent = 'Message received — please replace this demo handler before launch.';
-    btn.style.background = '#1d6558';
     btn.disabled = true;
+    btn.dataset.originalText = btn.dataset.originalText || btn.textContent;
+    btn.textContent = 'Sending...';
+  }
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method || 'POST',
+      body: formData
+    });
+    const result = await response.json().catch(() => ({}));
+
+    if (!response.ok || !result.ok) {
+      throw new Error(result.message || 'Contact form submission failed.');
+    }
+
+    form.reset();
+    if (status) {
+      status.textContent = 'Thank you. Your inquiry has been sent. We will follow up as soon as possible.';
+      status.classList.add('form-status--success');
+    }
+  } catch (error) {
+    console.error(error);
+    if (status) {
+      status.textContent = 'We could not send your inquiry from the website. Please call us or email inquiries@acaringadulthome.com directly.';
+      status.classList.add('form-status--error');
+    }
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = btn.dataset.originalText || 'Submit Inquiry →';
+    }
   }
 }
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const mapEl = document.getElementById("federal-way-map");
