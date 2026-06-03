@@ -1,5 +1,5 @@
 const RECIPIENT_EMAIL = "inquiries@acaringadulthome.com";
-const SENDER_EMAIL = "website@acaringadulthome.com";
+const SENDER_EMAIL = "inquiries@acaringadulthome.com";
 const FAILURE_MESSAGE = "We could not send your inquiry. Please call or email us directly.";
 
 const LIMITS = {
