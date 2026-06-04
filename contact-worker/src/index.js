@@ -1,8 +1,8 @@
 import { EmailMessage } from "cloudflare:email";
 
 const CONTACT_PATH = "/api/contact";
-const RECIPIENT_EMAIL = "inquiries@acaringadulthome.com";
-const SENDER_EMAIL = "website@acaringadulthome.com";
+const RECIPIENT_EMAIL = "acaringadulthome@gmail.com";
+const SENDER_EMAIL = "inquiries@acaringadulthome.com";
 const SUCCESS_MESSAGE = "Thank you. Your inquiry has been sent.";
 const FAILURE_MESSAGE = "We could not send your inquiry. Please call or email us directly.";
 
