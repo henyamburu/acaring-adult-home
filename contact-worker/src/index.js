@@ -116,8 +116,8 @@ export default {
     if (request.method === "GET" && url.searchParams.get("smoke") === "email") {
       try {
         const result = await env.EMAIL.send({
-          to: "inquiries@acaringadulthome.com",
-          from: "inquiries@acaringadulthome.com",
+          to: RECIPIENT_EMAIL,
+          from: SENDER_EMAIL,
           subject: "ACaring Contact Worker Smoke Test",
           text: "This is a smoke test from the acaring-contact-api Worker."
         });
