@@ -1,0 +1,11 @@
+name = "acaring-contact-api"
+main = "src/index.js"
+compatibility_date = "2026-06-03"
+
+[[routes]]
+pattern = "acaringadulthome.com/api/contact"
+zone_name = "acaringadulthome.com"
+
+[[send_email]]
+name = "EMAIL"
+destination_address = "inquiries@acaringadulthome.com"
