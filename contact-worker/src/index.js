@@ -113,37 +113,6 @@ export default {
       return jsonResponse({ ok: false, message: FAILURE_MESSAGE }, 404);
     }
 
-    if (request.method === "GET" && url.searchParams.get("smoke") === "email") {
-      try {
-        const result = await env.EMAIL.send({
-          to: RECIPIENT_EMAIL,
-          from: SENDER_EMAIL,
-          subject: "ACaring Contact Worker Smoke Test",
-          text: "This is a smoke test from the acaring-contact-api Worker."
-        });
-
-        return jsonResponse({
-          ok: true,
-          message: "Smoke test email sent.",
-          result
-        });
-      } catch (error) {
-        console.error("Smoke test email failed:", {
-          name: error?.name,
-          message: error?.message,
-          code: error?.code
-        });
-
-        return jsonResponse({
-          ok: false,
-          message: "Smoke test email failed.",
-          errorName: error?.name || null,
-          errorMessage: error?.message || null,
-          errorCode: error?.code || null
-        }, 500);
-      }
-    }
-
     if (request.method !== "POST") {
       return jsonResponse(
         { ok: false, message: FAILURE_MESSAGE },
