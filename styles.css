@@ -655,7 +655,8 @@
     .sticky-mobile-cta { display: none; }
 
     /* IMAGE PLACEHOLDER FALLBACK */
-    img[src^="images/"] {
+    img[src^="images/"],
+    img[src^="/images/"] {
       background:
         linear-gradient(135deg, rgba(46,125,107,.2), rgba(210,154,74,.16)),
         repeating-linear-gradient(45deg, #eef4ef 0 12px, #e5eee8 12px 24px);
