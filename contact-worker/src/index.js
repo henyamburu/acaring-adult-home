@@ -1,8 +1,8 @@
 import { EmailMessage } from "cloudflare:email";
 
 const CONTACT_PATH = "/api/contact";
-const RECIPIENT_EMAIL = "inquiries@acaringadulthome.com";
-const SENDER_EMAIL = "website@acaringadulthome.com";
+const RECIPIENT_EMAIL = "acaringadulthome@gmail.com";
+const SENDER_EMAIL = "inquiries@acaringadulthome.com";
 const SUCCESS_MESSAGE = "Thank you. Your inquiry has been sent.";
 const FAILURE_MESSAGE = "We could not send your inquiry. Please call or email us directly.";
 
@@ -111,6 +111,37 @@ export default {
 
     if (url.pathname !== CONTACT_PATH) {
       return jsonResponse({ ok: false, message: FAILURE_MESSAGE }, 404);
+    }
+
+    if (request.method === "GET" && url.searchParams.get("smoke") === "email") {
+      try {
+        const result = await env.EMAIL.send({
+          to: "inquiries@acaringadulthome.com",
+          from: "inquiries@acaringadulthome.com",
+          subject: "ACaring Contact Worker Smoke Test",
+          text: "This is a smoke test from the acaring-contact-api Worker."
+        });
+
+        return jsonResponse({
+          ok: true,
+          message: "Smoke test email sent.",
+          result
+        });
+      } catch (error) {
+        console.error("Smoke test email failed:", {
+          name: error?.name,
+          message: error?.message,
+          code: error?.code
+        });
+
+        return jsonResponse({
+          ok: false,
+          message: "Smoke test email failed.",
+          errorName: error?.name || null,
+          errorMessage: error?.message || null,
+          errorCode: error?.code || null
+        }, 500);
+      }
     }
 
     if (request.method !== "POST") {

@@ -3,9 +3,13 @@ main = "src/index.js"
 compatibility_date = "2026-06-03"
 
 [[routes]]
-pattern = "acaringadulthome.com/api/contact"
+pattern = "acaringadulthome.com/api/contact*"
+zone_name = "acaringadulthome.com"
+
+[[routes]]
+pattern = "www.acaringadulthome.com/api/contact*"
 zone_name = "acaringadulthome.com"
 
 [[send_email]]
 name = "EMAIL"
-destination_address = "inquiries@acaringadulthome.com"
+destination_address = "acaringadulthome@gmail.com"
