@@ -1,6 +1,6 @@
 # Backlog — ACaring Adult Home Website
 
-_Last updated: 2026-05-30_
+_Last updated: 2026-06-08_
 
 ## Priority legend
 
@@ -14,13 +14,13 @@ _Last updated: 2026-05-30_
 | ID | Priority | Area | Task | Status | Notes |
 |---|---:|---|---|---|---|
 | AFH-001 | P0 | Contact | Verify official phone, email, and address on every page | Open | Remove all placeholder contact details |
-| AFH-002 | P0 | Forms | Connect `contact.html` form to email or approved intake workflow | Open | See `FORM_CONTACT_WORKFLOW.md` |
-| AFH-003 | P0 | Forms | Add privacy notice above form | Open | Warn users not to submit sensitive medical details |
-| AFH-004 | P0 | Forms | Add form confirmation/success state | Open | User should know message was submitted |
-| AFH-005 | P0 | Forms | Add spam prevention | Open | Prefer Cloudflare Turnstile or similar |
+| AFH-002 | P0 | Forms | Connect `contact.html` form to email or approved intake workflow | Complete | Cloudflare Worker `acaring-contact-api` handles contact submissions |
+| AFH-003 | P0 | Forms | Add privacy notice above form | Complete | Form copy warns users not to submit sensitive medical details |
+| AFH-004 | P0 | Forms | Add form confirmation/success state | Complete | Live contact form test completed |
+| AFH-005 | P0 | Forms | Add spam prevention | Complete | Honeypot field is implemented in the Worker workflow |
 | AFH-006 | P0 | QA | Check all links and navigation | Open | Especially mobile menu if present |
 | AFH-007 | P0 | Images | Replace broken/placeholder image references | Open | See `PRIVACY_IMAGE_POLICY.md` |
-| AFH-008 | P0 | Deployment | Confirm Cloudflare Pages deploys latest GitHub files | Open | Note cache/deployment behavior in `DEV_LOG.md` |
+| AFH-008 | P0 | Deployment | Confirm Cloudflare Pages deploys latest GitHub files | Complete | `main` is current and Worker setup is documented |
 | AFH-009 | P1 | Analytics | Confirm Cloudflare Web Analytics is installed once | Open | Avoid duplicate scripts |
 | AFH-010 | P1 | Referrals | Strengthen `referrals.html` into a professional referral pathway | Open | Include family + case manager language |
 | AFH-011 | P1 | Events | Build reusable event/activity card layout | Open | Keep static at first |
