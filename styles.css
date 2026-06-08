@@ -275,25 +275,41 @@
 
     /* CARE FIT TABS */
     .tabs-wrap {
-      display: grid; grid-template-columns: 340px 1fr; gap: 2rem; align-items: start; margin-top: 2rem;
+      display: grid;
+      grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.35fr);
+      gap: clamp(1rem, 2vw, 1.5rem);
+      align-items: stretch;
+      margin-top: 2rem;
     }
-    .tab-buttons { display: grid; gap: 10px; }
+    .tab-buttons {
+      display: grid;
+      grid-template-rows: repeat(3, minmax(0, 1fr));
+      gap: clamp(0.75rem, 1.5vw, 1rem);
+    }
     .tab-btn {
       text-align: left; border: 1px solid var(--color-border); background: rgba(255,255,255,0.8);
       border-radius: 16px; padding: 16px; font-family: var(--font-sans); cursor: pointer;
       transition: 0.2s; color: var(--color-text-secondary);
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .tab-btn strong { display: block; color: var(--color-text-primary); margin-bottom: 2px; }
     .tab-btn span { font-size: 12.5px; color: var(--color-text-muted); }
     .tab-btn.active, .tab-btn:hover {
       border-color: var(--color-green); box-shadow: var(--shadow-card); background: #fff;
-      transform: translateY(-1px);
     }
     .tab-panel {
       display: none; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-xl);
       padding: 28px; box-shadow: var(--shadow-card);
+      min-height: 100%;
     }
-    .tab-panel.active { display: block; }
+    .tab-panel.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
     .tab-panel h3 { font-family: var(--font-serif); font-size: 1.65rem; margin-bottom: 0.6rem; }
     .tab-panel p { color: var(--color-text-secondary); margin-bottom: 1.2rem; }
     .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -660,6 +676,16 @@
     }
     .footer-logo { font-family: var(--font-serif); font-size: 16px; color: #fff; }
     .footer a { color: rgba(255,255,255,0.82); text-decoration: none; margin-left: 16px; }
+    .footer-disclaimer {
+      flex-basis: 100%;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.16);
+      color: rgba(255,255,255,0.68);
+      font-size: 11.5px;
+      line-height: 1.6;
+      max-width: 980px;
+    }
     .sticky-mobile-cta { display: none; }
 
     /* IMAGE PLACEHOLDER FALLBACK */
@@ -754,6 +780,20 @@
   gap: 12px;
   flex-wrap: wrap;
   margin-top: 1.7rem;
+}
+
+.care-fit-cta {
+  margin-block: 0;
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+.care-fit-services-summary {
+  padding-top: 0;
+}
+
+.daily-life-cta {
+  margin-block: 0;
+  padding-block: clamp(3rem, 6vw, 5rem);
 }
 
 .content-card {
