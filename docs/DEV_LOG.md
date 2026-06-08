@@ -6,6 +6,51 @@ Use this file as the running project memory for Codex and future development ses
 
 ## Log entries
 
+### 2026-06-08 - Completed public copy and claim-safety pass
+
+**Changed:**
+
+- Revised public-facing copy across core static pages to remove internal website-builder language.
+- Softened dementia and developmental disability wording so it remains conditional and assessment-based.
+- Changed the navigation label from Admissions to Referrals while keeping `referrals.html`.
+- Added a sitewide footer disclaimer for informational, eligibility, placement, and emergency boundaries.
+- Simplified contact form privacy copy and kept submissions general.
+- Cleaned shared meta keywords to reduce specialty-care keyword stuffing.
+- Updated the content guide with claim-safety and privacy rules.
+
+**Files modified:**
+
+- `index.html`
+- `about.html`
+- `care-fit.html`
+- `daily-life.html`
+- `events.html`
+- `referrals.html`
+- `location-contact.html`
+- `404.html`
+- `contact.html`
+- `care-services.html`
+- `who-we-serve.html`
+- `styles.css`
+- `docs/CONTENT_GUIDE.md`
+- `docs/DEV_LOG.md`
+
+**Reason:**
+
+The site should use warmer, clearer, claim-safe Adult Family Home language and avoid implying specialty care, guaranteed placement, or medical/legal advice.
+
+**Testing performed:**
+
+- Public-copy phrase audit
+- Claim-risk term audit
+- Footer disclaimer audit
+- HTML link and anchor audit
+- `node --check script.js`
+
+**Follow-up needed:**
+
+- Owner should confirm whether full residential addresses should remain public.
+
 ### 2026-06-08 - Completed contact detail and navigation audit
 
 **Changed:**

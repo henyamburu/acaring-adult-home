@@ -1,6 +1,6 @@
 # Content Guide — ACaring Adult Home Website
 
-_Last updated: 2026-05-30_
+_Last updated: 2026-06-08_
 
 ## Core message
 
@@ -182,6 +182,16 @@ Possible section headings:
 ## Claims discipline
 
 Do not make claims that require proof unless proof is provided.
+
+Public HTML should not include internal website-builder language such as instructions to "make the site feel active," "show" a section, or explain why a page exists for marketing purposes. Write directly to families, guardians, referral partners, and community professionals.
+
+Dementia, developmental disability, behavioral health, and mental health language must remain conditional unless licensing, specialty designation, staffing scope, and owner approval are verified. Use phrases such as "inquiries," "support needs," and "fit depends on assessment" instead of implying specialty care.
+
+Contact and referral forms should stay general and privacy-safe. Do not ask visitors to submit detailed medical records, diagnosis details, medication lists, Social Security numbers, Medicaid or Medicare numbers, or other sensitive personal information through the public form.
+
+Placement and services depend on resident assessment, care needs, safety considerations, licensing requirements, specialty designation where applicable, staffing, current availability, payer requirements, and whether the home can safely meet the resident's needs.
+
+Avoid Medicare or Medicaid acceptance claims unless they are verified and carefully qualified. Do not imply guaranteed acceptance, guaranteed placement, skilled nursing, hospital-level care, full-service medical care, or 24/7 nursing care.
 
 Examples:
 
