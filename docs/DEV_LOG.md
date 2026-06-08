@@ -6,6 +6,35 @@ Use this file as the running project memory for Codex and future development ses
 
 ## Log entries
 
+### 2026-06-08 - Completed contact detail and navigation audit
+
+**Changed:**
+
+- Verified public contact references for phone, email, and Federal Way addresses.
+- Updated stale contact navigation on `care-services.html` and `who-we-serve.html` to point to `location-contact.html#contact`.
+- Wired the older page mobile navigation buttons to the existing `toggleMenu()` behavior.
+- Marked AFH-001 and AFH-006 complete in the backlog.
+
+**Files modified:**
+
+- `care-services.html`
+- `who-we-serve.html`
+- `docs/BACKLOG.md`
+- `docs/DEV_LOG.md`
+
+**Reason:**
+
+The site should route visitors to the current contact form and should not retain stale contact-page links or broken internal anchors.
+
+**Testing performed:**
+
+- `node --check script.js`
+- Local PowerShell link and anchor audit for HTML pages
+
+**Follow-up needed:**
+
+- Continue with AFH-007 image/reference QA and AFH-009 analytics confirmation.
+
 ### 2026-06-08 - Verified contact Worker setup
 
 **Changed:**

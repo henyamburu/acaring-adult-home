@@ -5,77 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Who We Serve | ACaring Adult Home</title>
   <meta name="description" content="Adult Family Home care for adults with developmental disabilities, dementia-related needs, aging-related care needs, and supervision needs." />
+  <meta name="keywords" content="Adult Family Home Federal Way WA, developmental disability adult care Federal Way, dementia adult family home Federal Way, residential care home Federal Way, adult care home Washington State" />
+  <meta property="og:title" content="Who We Serve | ACaring Adult Home" />
+  <meta property="og:description" content="A supportive Adult Family Home for adults who need safety, structure, supervision, and personal care." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/images/home-front.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
-  <!-- Paste Cloudflare Web Analytics beacon script here before launch. -->
+  <!-- Cloudflare Web Analytics: paste your beacon script here before launch. -->
 </head>
 <body>
-<nav class="nav"><a href="index.html" class="nav-logo">A<span>Caring</span> Adult Home</a><ul class="nav-links"><li><a href="about.html" class="">About</a></li>
-<li><a href="care-services.html" class="">Care & Services</a></li>
-<li><a href="who-we-serve.html" class="active-link">Who We Serve</a></li>
-<li><a href="daily-life.html" class="">Daily Life</a></li>
-<li><a href="events.html" class="">Events</a></li>
-<li><a href="referrals.html" class="">Referrals</a></li>
-<li><a href="contact.html" class="">Contact</a></li></ul><a href="contact.html" class="nav-cta">Ask About Availability</a><button class="nav-mobile-btn" aria-label="Open menu"><span></span><span></span><span></span></button></nav>
-<section class="page-hero"><div class="page-hero-inner"><span class="page-kicker">Who We Serve</span><h1 class="page-title">A supportive home for adults who need safety, structure, and personal care.</h1><p class="page-intro">We welcome inquiries for adults who may benefit from a smaller, calm, supervised residential setting.</p></div></section><!-- Who We Serve -->
-  <section class="who">
-    <div>
-      <div class="section-eyebrow">Who we serve</div>
-      <h2 class="section-title">A good fit for adults who need</h2>
-      <div class="who-list">
-        <div class="who-item">
-          <div class="who-check"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 5l2 2L7.5 3" stroke="#2E7D6B" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-          A smaller home setting instead of a large facility
-        </div>
-        <div class="who-item">
-          <div class="who-check"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 5l2 2L7.5 3" stroke="#2E7D6B" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-          Daily structure, reminders, and supervision for safety
-        </div>
-        <div class="who-item">
-          <div class="who-check"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 5l2 2L7.5 3" stroke="#2E7D6B" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-          Support related to developmental disabilities
-        </div>
-        <div class="who-item">
-          <div class="who-check"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 5l2 2L7.5 3" stroke="#2E7D6B" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-          Dementia-related or aging-related care needs
-        </div>
-        <div class="who-item">
-          <div class="who-check"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 5l2 2L7.5 3" stroke="#2E7D6B" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-          Personal care and medication assistance
-        </div>
-        <div class="who-item">
-          <div class="who-check"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 5l2 2L7.5 3" stroke="#2E7D6B" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-          Consistent routines and a calm, respectful environment
-        </div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">A<span>Caring</span> Adult Home</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="daily-life.html">Daily Life</a></li>
+        <li><a href="care-fit.html">Care Fit</a></li>
+        <li><a href="referrals.html">Admissions</a></li>
+        <li><a href="events.html">Updates</a></li>
+        <li><a href="location-contact.html">Location</a></li>
+      </ul>
+      <a href="location-contact.html#contact" class="nav-cta">Ask About Availability</a>
+      <button class="nav-mobile-btn" aria-label="Open menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <span class="hero-tag">Who We Serve</span>
+      <h1 class="page-title">A supportive home for adults who need safety, structure, and personal care.</h1>
+      <p class="page-sub">We welcome inquiries for adults who may benefit from a smaller, calm, supervised residential setting.</p>
+      <div class="page-actions">
+        <a href="location-contact.html#contact" class="btn-primary">Contact Us to Discuss Fit</a>
+        <a href="care-fit.html" class="btn-outline">Review Care Fit</a>
       </div>
     </div>
-    <div>
-      <div class="section-eyebrow">Referrals welcome from</div>
-      <h2 class="section-title">Placement partners</h2>
-      <div class="who-list">
-        <div class="who-item">
-          <div class="who-check"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 5l2 2L7.5 3" stroke="#2E7D6B" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-          Families and guardians
+  </header>
+
+  <section class="section section-soft">
+    <div class="container referral-info-grid">
+      <article class="content-card">
+        <div class="section-kicker">Who we serve</div>
+        <h2>A good fit for adults who need</h2>
+        <ul class="simple-list">
+          <li>A smaller home setting instead of a large facility</li>
+          <li>Daily structure, reminders, and supervision for safety</li>
+          <li>Support related to developmental disabilities</li>
+          <li>Dementia-related or aging-related care needs</li>
+          <li>Personal care and medication assistance</li>
+          <li>Consistent routines and a calm, respectful environment</li>
+        </ul>
+      </article>
+
+      <article class="content-card">
+        <div class="section-kicker">Referrals welcome from</div>
+        <h2>Placement partners</h2>
+        <ul class="simple-list">
+          <li>Families and guardians</li>
+          <li>Case managers and representatives</li>
+          <li>Hospital discharge planners</li>
+          <li>Placement coordinators</li>
+          <li>Community referral partners</li>
+        </ul>
+        <div class="page-actions">
+          <a href="location-contact.html#contact" class="btn-primary">Start an Inquiry</a>
         </div>
-        <div class="who-item">
-          <div class="who-check"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 5l2 2L7.5 3" stroke="#2E7D6B" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-          Case managers and representatives
-        </div>
-        <div class="who-item">
-          <div class="who-check"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 5l2 2L7.5 3" stroke="#2E7D6B" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-          Hospital discharge planners
-        </div>
-        <div class="who-item">
-          <div class="who-check"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 5l2 2L7.5 3" stroke="#2E7D6B" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-          Placement coordinators
-        </div>
-        <div class="who-item">
-          <div class="who-check"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 5l2 2L7.5 3" stroke="#2E7D6B" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-          Community referral partners
-        </div>
-      </div>
-      <a href="#contact" class="btn-primary" style="margin-top: 1.8rem; display: inline-block;">Contact Us to Discuss Fit</a>
+      </article>
     </div>
-</section><footer class="footer"><div class="footer-logo">ACaring Adult Home</div><div class="footer-loc">Federal Way, Washington &nbsp;·&nbsp; Adult Family Home</div></footer><script src="/script.js"></script></body></html>
+  </section>
+
+  <section class="section">
+    <div class="container preview-grid">
+      <article class="preview-card">
+        <h3>Smaller residential setting</h3>
+        <p>A home-like environment can be easier to navigate than a large facility for some residents and families.</p>
+      </article>
+      <article class="preview-card">
+        <h3>Routine and supervision</h3>
+        <p>Consistent daily rhythms help support safety, comfort, and communication with families or representatives.</p>
+      </article>
+      <article class="preview-card">
+        <h3>Inquiry-first process</h3>
+        <p>Families and referral partners can start with a general conversation before sharing detailed information privately.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">ACaring Adult Home</div>
+        <div>Federal Way, Washington &middot; Adult Family Home</div>
+      </div>
+      <div>
+        <a href="daily-life.html">Daily Life</a>
+        <a href="care-fit.html">Care Fit</a>
+        <a href="location-contact.html#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-mobile-cta" aria-label="Quick contact buttons">
+    <a href="location-contact.html#contact">Ask Availability</a>
+    <a href="tel:+12532374030">Call</a>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
