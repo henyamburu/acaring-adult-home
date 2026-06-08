@@ -13,12 +13,12 @@ _Last updated: 2026-06-08_
 
 | ID | Priority | Area | Task | Status | Notes |
 |---|---:|---|---|---|---|
-| AFH-001 | P0 | Contact | Verify official phone, email, and address on every page | Open | Remove all placeholder contact details |
+| AFH-001 | P0 | Contact | Verify official phone, email, and address on every page | Complete | Contact details audited; no placeholder contact details found |
 | AFH-002 | P0 | Forms | Connect `contact.html` form to email or approved intake workflow | Complete | Cloudflare Worker `acaring-contact-api` handles contact submissions |
 | AFH-003 | P0 | Forms | Add privacy notice above form | Complete | Form copy warns users not to submit sensitive medical details |
 | AFH-004 | P0 | Forms | Add form confirmation/success state | Complete | Live contact form test completed |
 | AFH-005 | P0 | Forms | Add spam prevention | Complete | Honeypot field is implemented in the Worker workflow |
-| AFH-006 | P0 | QA | Check all links and navigation | Open | Especially mobile menu if present |
+| AFH-006 | P0 | QA | Check all links and navigation | Complete | Internal links and anchors checked; stale contact links fixed |
 | AFH-007 | P0 | Images | Replace broken/placeholder image references | Open | See `PRIVACY_IMAGE_POLICY.md` |
 | AFH-008 | P0 | Deployment | Confirm Cloudflare Pages deploys latest GitHub files | Complete | `main` is current and Worker setup is documented |
 | AFH-009 | P1 | Analytics | Confirm Cloudflare Web Analytics is installed once | Open | Avoid duplicate scripts |
