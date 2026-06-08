@@ -1,10 +1,37 @@
 # Development Log — ACaring Adult Home Website
 
-_Last updated: 2026-06-02_
+_Last updated: 2026-06-08_
 
 Use this file as the running project memory for Codex and future development sessions.
 
 ## Log entries
+
+### 2026-06-08 - Verified contact Worker setup
+
+**Changed:**
+
+- Marked the contact Worker operational setup as complete.
+- Updated project tracking docs to show the contact form Worker workflow is no longer pending.
+- Documented that Cloudflare Worker deploy settings, `EMAIL` binding, live form test, and Worker status review are complete.
+
+**Files modified:**
+
+- `contact-worker/docs/contact-worker-setup.md`
+- `docs/BACKLOG.md`
+- `docs/PROJECT_STATE.md`
+- `docs/DEV_LOG.md`
+
+**Reason:**
+
+The contact form API setup has been completed and should be reflected in the project tracking docs.
+
+**Testing performed:**
+
+- Documentation-only update; no runtime code changed.
+
+**Follow-up needed:**
+
+- Continue with referral pathway, analytics confirmation, SEO basics, and accessibility QA.
 
 ### 2026-06-02 - Connected location contact form to Cloudflare endpoint
 

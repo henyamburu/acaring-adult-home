@@ -47,3 +47,10 @@ node_modules/
 ```
 
 Secrets such as email API keys should be stored in Cloudflare Worker environment variables or secrets, not committed to Git.
+
+## Operational status
+
+- [x] Cloudflare Worker deploy settings verified.
+- [x] `EMAIL` Worker binding verified.
+- [x] Live contact form test completed.
+- [x] Worker logs reviewed or not needed because the live test passed.
