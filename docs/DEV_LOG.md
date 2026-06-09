@@ -22,11 +22,12 @@ Production checks 1 through 4 were completed after merge/deploy: Cloudflare Page
 - `/sitemap.xml` and `/robots.txt` checked.
 - `/contact.html` and `/contact` redirect behavior checked.
 - Live test inquiry submitted and email delivery confirmed.
+- Live structured-data validation completed for the homepage and contact page.
 
 **Follow-up needed:**
 
-- Run live structured-data validation.
 - Confirm whether both full residential addresses remain approved for public display.
+- Use one shared Google Business Profile for now; add `sameAs` only after the official profile URL is confirmed.
 - Install Cloudflare Web Analytics once and keep any analytics events non-PII.
 
 ### 2026-06-09 - Completed Local SEO Cleanup Sprint
@@ -70,7 +71,7 @@ Structured data should model the organization and two locations accurately, redi
 **Follow-up needed:**
 
 - Owner should confirm both full residential addresses remain approved for public display.
-- Owner should confirm whether one or both locations have official Google Business Profiles before adding any `sameAs` URLs.
+- One shared Google Business Profile is expected for now; confirm the official profile URL before adding any `sameAs` markup.
 - Install Cloudflare Web Analytics once when the production account script is available; GA4/GTM should remain absent unless explicitly approved.
 
 ### 2026-06-09 - Implemented Local Visibility Sprint
