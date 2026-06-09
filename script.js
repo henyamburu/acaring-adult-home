@@ -15,6 +15,29 @@ document.querySelectorAll('.tab-btn').forEach(button => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-accordion]').forEach(accordion => {
+    const buttons = accordion.querySelectorAll('.faq-question');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const currentItem = button.closest('.faq-item');
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+        buttons.forEach(otherButton => {
+          if (otherButton === button) return;
+
+          otherButton.setAttribute('aria-expanded', 'false');
+          otherButton.closest('.faq-item')?.classList.remove('is-open');
+        });
+
+        button.setAttribute('aria-expanded', String(!isOpen));
+        currentItem?.classList.toggle('is-open', !isOpen);
+      });
+    });
+  });
+});
+
 async function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
