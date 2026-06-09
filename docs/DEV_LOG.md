@@ -6,6 +6,29 @@ Use this file as the running project memory for Codex and future development ses
 
 ## Log entries
 
+### 2026-06-09 - Recorded post-deploy local SEO verification
+
+**Changed:**
+
+- Marked completed local visibility backlog items for referral content, form labels, contact map/context, next-step FAQ content, FAQ accordion, and inquiry-source tracking.
+
+**Reason:**
+
+Production checks 1 through 4 were completed after merge/deploy: Cloudflare Pages deployment, sitemap/robots and contact redirects, and live inquiry delivery.
+
+**Testing performed:**
+
+- Production deploy confirmed.
+- `/sitemap.xml` and `/robots.txt` checked.
+- `/contact.html` and `/contact` redirect behavior checked.
+- Live test inquiry submitted and email delivery confirmed.
+
+**Follow-up needed:**
+
+- Run live structured-data validation.
+- Confirm whether both full residential addresses remain approved for public display.
+- Install Cloudflare Web Analytics once and keep any analytics events non-PII.
+
 ### 2026-06-09 - Completed Local SEO Cleanup Sprint
 
 **Changed:**

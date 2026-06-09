@@ -22,15 +22,15 @@ _Last updated: 2026-06-09_
 | AFH-007 | P0 | Images | Replace broken/placeholder image references | Open | See `PRIVACY_IMAGE_POLICY.md` |
 | AFH-008 | P0 | Deployment | Confirm Cloudflare Pages deploys latest GitHub files | Complete | `main` is current and Worker setup is documented |
 | AFH-009 | P1 | Analytics | Confirm Cloudflare Web Analytics is installed once | Open | Placeholder comments remain; real script still needs owner/account install |
-| AFH-010 | P1 | Referrals | Strengthen `referrals.html` into a professional referral pathway | Open | Include family + case manager language |
+| AFH-010 | P1 | Referrals | Strengthen `referrals.html` into a professional referral pathway | Complete | Family, case manager, discharge planner, placement coordinator, and CTA language added |
 | AFH-011 | P1 | Events | Build reusable event/activity card layout | Open | Keep static at first |
 | AFH-012 | P1 | SEO | Add page titles and meta descriptions | Complete | Verified unique public page titles and descriptions |
-| AFH-013 | P1 | Accessibility | Ensure forms have labels and readable contrast | Open | Use semantic HTML |
-| AFH-014 | P1 | Contact | Add “Start the Conversation” section with map/location context | Open | Include two locations only if business wants both public |
-| AFH-015 | P1 | Content | Add “What happens after you contact us?” section | Open | Sets family expectations |
-| AFH-016 | P2 | Content | Add FAQ section | Open | Family/referral questions |
+| AFH-013 | P1 | Accessibility | Ensure forms have labels and readable contrast | Complete | Contact form label audit completed |
+| AFH-014 | P1 | Contact | Add “Start the Conversation” section with map/location context | Complete | Contact page includes two-location context and map links |
+| AFH-015 | P1 | Content | Add “What happens after you contact us?” section | Complete | FAQ and referral content explain next steps |
+| AFH-016 | P2 | Content | Add FAQ section | Complete | Accessible FAQ accordion and matching FAQ schema added |
 | AFH-017 | P2 | Content | Create simple family guide page | Open | Good trust-building page |
-| AFH-018 | P2 | Analytics | Track inquiry sources manually | Open | Add optional “How did you hear about us?” field |
+| AFH-018 | P2 | Analytics | Track inquiry sources manually | Complete | Optional “How did you hear about us?” field added and forwarded safely |
 | AFH-019 | P2 | Operations | Add inquiry review checklist | Open | Can be in docs first, later page/download |
 | AFH-020 | P3 | System | Add lightweight CMS or JSON data source for events | Future | Only when static editing becomes annoying |
 | AFH-021 | P3 | Content | Add resource library | Future | Articles and placement education |
