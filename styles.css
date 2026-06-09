@@ -754,7 +754,13 @@
       font-size: 13px;
     }
     .footer-logo { font-family: var(--font-serif); font-size: 16px; color: #fff; }
+    .footer-logo + div,
+    .footer-logo + div + div,
+    .footer-logo + div + div + div {
+      margin-top: 4px;
+    }
     .footer a { color: rgba(255,255,255,0.82); text-decoration: none; margin-left: 16px; }
+    .footer-logo + div + div a { margin-left: 0; }
     .footer-disclaimer {
       flex-basis: 100%;
       margin-top: 1rem;
@@ -981,6 +987,13 @@
   color: var(--color-text-secondary);
   font-size: 14px;
   line-height: 1.65;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1rem;
 }
 
 .referral-info-grid {

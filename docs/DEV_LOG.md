@@ -1,10 +1,110 @@
 # Development Log — ACaring Adult Home Website
 
-_Last updated: 2026-06-08_
+_Last updated: 2026-06-09_
 
 Use this file as the running project memory for Codex and future development sessions.
 
 ## Log entries
+
+### 2026-06-09 - Completed Local SEO Cleanup Sprint
+
+**Changed:**
+
+- Replaced single LocalBusiness schemas containing two addresses with `@graph` structured data.
+- Added one `Organization` node and two separate `LocalBusiness` nodes with unique `@id` values.
+- Added FAQPage JSON-LD on `location-contact.html` that mirrors the visible FAQ accordion exactly.
+- Added absolute canonical URLs to indexable pages.
+- Added Cloudflare Pages `_redirects` rules for `/contact.html` and `/contact`.
+- Removed `contact.html` from `sitemap.xml` and kept `404.html` as noindex.
+- Added a local-area section and official DSHS Adult Family Home Locator resource link on `location-contact.html`.
+- Added a safe `inquiry_submit_success` conversion event hook using only `inquiry_type`, `inquiry_role`, `preferred_contact`, and `hear_about`.
+- Refined homepage meta description to focus on availability, care fit, referrals, and next steps.
+
+**Files modified:**
+
+- `index.html`
+- `location-contact.html`
+- `contact.html`
+- `script.js`
+- `sitemap.xml`
+- `_redirects`
+- `docs/BACKLOG.md`
+- `docs/DECISIONS.md`
+- `docs/DEV_LOG.md`
+
+**Reason:**
+
+Structured data should model the organization and two locations accurately, redirects should use HTTP 301 behavior where Cloudflare Pages supports it, and tracking should remain safe and non-PII.
+
+**Testing performed:**
+
+- Schema audit confirmed no LocalBusiness node uses an address array.
+- Schema audit confirmed no `geo`, `sameAs`, `aggregateRating`, review, or `MedicalClinic` data was added.
+- FAQ schema text was compared against the visible FAQ questions and answers.
+- Redirect and sitemap audit confirmed `contact.html` is excluded from the sitemap and covered by `_redirects`.
+- `node --check script.js`
+
+**Follow-up needed:**
+
+- Owner should confirm both full residential addresses remain approved for public display.
+- Owner should confirm whether one or both locations have official Google Business Profiles before adding any `sameAs` URLs.
+- Install Cloudflare Web Analytics once when the production account script is available; GA4/GTM should remain absent unless explicitly approved.
+
+### 2026-06-09 - Implemented Local Visibility Sprint
+
+**Changed:**
+
+- Added and audited unique titles and meta descriptions across public HTML entry points.
+- Added Federal Way Adult Family Home content to the homepage without ranking claims or medical overclaims.
+- Added LocalBusiness JSON-LD on the homepage and contact page using the public phone, email, area served, and two existing public Federal Way locations.
+- Added `sitemap.xml` and `robots.txt`.
+- Converted legacy `care-services.html` and `who-we-serve.html` into useful public pages instead of immediate redirects.
+- Expanded the FAQ accordion with practical family and referral-partner questions.
+- Strengthened `referrals.html` for families, case managers, discharge planners, placement coordinators, and representatives.
+- Added optional "How did you hear about us?" tracking to the contact form and Cloudflare Worker.
+- Added consistent footer NAP content to core pages.
+
+**Files modified:**
+
+- `index.html`
+- `about.html`
+- `care-services.html`
+- `who-we-serve.html`
+- `daily-life.html`
+- `care-fit.html`
+- `referrals.html`
+- `events.html`
+- `location-contact.html`
+- `contact.html`
+- `404.html`
+- `script.js`
+- `styles.css`
+- `contact-worker/src/index.js`
+- `functions/api/contact.disabled.js`
+- `sitemap.xml`
+- `robots.txt`
+- `docs/BACKLOG.md`
+- `docs/ROADMAP.md`
+- `docs/DECISIONS.md`
+- `docs/DEV_LOG.md`
+
+**Reason:**
+
+Improve local search visibility and conversion clarity for families and referral partners while preserving privacy-safe, assessment-based language.
+
+**Testing performed:**
+
+- `node --check script.js`
+- `node --check contact-worker/src/index.js`
+- Metadata audit for titles, descriptions, keyword tags, and noindex.
+- Heading audit confirmed one H1 per main public page.
+- Form field audit confirmed labels for visible contact fields and optional inquiry-source tracking.
+- Script audit confirmed no analytics script is installed beyond placeholder comments.
+
+**Follow-up needed:**
+
+- Owner should confirm both full residential addresses remain approved for public display.
+- Run a live post-deploy structured-data test and contact form submission on production.
 
 ### 2026-06-08 - Completed public copy and claim-safety pass
 
