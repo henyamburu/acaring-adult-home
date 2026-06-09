@@ -9,6 +9,7 @@ const LIMITS = {
   preferred_contact: 80,
   inquiry_role: 80,
   inquiry_type: 80,
+  hear_about: 80,
   message: 2000
 };
 
@@ -54,6 +55,9 @@ function buildEmailText(fields) {
     "",
     "Inquiry Type:",
     fields.inquiry_type,
+    "",
+    "How did they hear about us?:",
+    fields.hear_about || "Not provided",
     "",
     "Message:",
     fields.message,
@@ -103,6 +107,7 @@ export async function onRequest(context) {
     preferred_contact: trimValue(formData.get("preferred_contact")),
     inquiry_role: trimValue(formData.get("inquiry_role")),
     inquiry_type: trimValue(formData.get("inquiry_type")),
+    hear_about: trimValue(formData.get("hear_about")),
     message: trimValue(formData.get("message"))
   };
 

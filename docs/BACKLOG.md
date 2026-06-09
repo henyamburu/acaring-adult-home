@@ -1,6 +1,6 @@
 # Backlog — ACaring Adult Home Website
 
-_Last updated: 2026-06-08_
+_Last updated: 2026-06-09_
 
 ## Priority legend
 
@@ -21,10 +21,10 @@ _Last updated: 2026-06-08_
 | AFH-006 | P0 | QA | Check all links and navigation | Complete | Internal links and anchors checked; stale contact links fixed |
 | AFH-007 | P0 | Images | Replace broken/placeholder image references | Open | See `PRIVACY_IMAGE_POLICY.md` |
 | AFH-008 | P0 | Deployment | Confirm Cloudflare Pages deploys latest GitHub files | Complete | `main` is current and Worker setup is documented |
-| AFH-009 | P1 | Analytics | Confirm Cloudflare Web Analytics is installed once | Open | Avoid duplicate scripts |
+| AFH-009 | P1 | Analytics | Confirm Cloudflare Web Analytics is installed once | Open | Placeholder comments remain; real script still needs owner/account install |
 | AFH-010 | P1 | Referrals | Strengthen `referrals.html` into a professional referral pathway | Open | Include family + case manager language |
 | AFH-011 | P1 | Events | Build reusable event/activity card layout | Open | Keep static at first |
-| AFH-012 | P1 | SEO | Add page titles and meta descriptions | Open | Local search + trust wording |
+| AFH-012 | P1 | SEO | Add page titles and meta descriptions | Complete | Verified unique public page titles and descriptions |
 | AFH-013 | P1 | Accessibility | Ensure forms have labels and readable contrast | Open | Use semantic HTML |
 | AFH-014 | P1 | Contact | Add “Start the Conversation” section with map/location context | Open | Include two locations only if business wants both public |
 | AFH-015 | P1 | Content | Add “What happens after you contact us?” section | Open | Sets family expectations |
@@ -34,17 +34,24 @@ _Last updated: 2026-06-08_
 | AFH-019 | P2 | Operations | Add inquiry review checklist | Open | Can be in docs first, later page/download |
 | AFH-020 | P3 | System | Add lightweight CMS or JSON data source for events | Future | Only when static editing becomes annoying |
 | AFH-021 | P3 | Content | Add resource library | Future | Articles and placement education |
+| AFH-022 | P1 | Local Visibility | Add Local Visibility Sprint metadata, local content, NAP footer, structured data, sitemap, robots, FAQ, referral updates, and inquiry-source tracking | Complete | Implemented 2026-06-09 |
+| AFH-023 | P1 | Structured Data | Split LocalBusiness schema into Organization plus separate LocalBusiness nodes per location | Complete | Implemented with `@graph`; no ratings, sameAs, geo, or medical subtype added |
+| AFH-024 | P1 | Redirects | Replace `contact.html` meta refresh with Cloudflare Pages 301 redirects | Complete | Added `_redirects`; removed redirect page from sitemap |
+| AFH-025 | P2 | Trust Links | Add authoritative Washington DSHS Adult Family Home resource link | Complete | Added official DSHS Adult Family Home Locator link without endorsement language |
 
 ## Recommended next sprint
 
-### Sprint: Contact + inquiry readiness
+### Sprint: Local Visibility
 
-1. Confirm contact information.
-2. Connect form.
-3. Add privacy-safe form text.
-4. Test successful submission.
-5. Add form submission instructions to `DEV_LOG.md`.
-6. Update `DECISIONS.md` with chosen form provider/architecture.
+1. Add unique titles and meta descriptions to every public page.
+2. Add Federal Way Adult Family Home content without keyword stuffing.
+3. Add consistent footer NAP and clear local-location wording.
+4. Add LocalBusiness JSON-LD using only verified public details.
+5. Add `sitemap.xml` and `robots.txt`.
+6. Expand the FAQ into an accessible accordion.
+7. Strengthen the referral page for families and professional referral partners.
+8. Add optional inquiry-source tracking to the public form and Worker.
+9. Run metadata, form-label, script, analytics, and link checks.
 
 ## Codex task prompt for next sprint
 

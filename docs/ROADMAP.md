@@ -1,6 +1,6 @@
 # Roadmap — ACaring Adult Home Website
 
-_Last updated: 2026-05-30_
+_Last updated: 2026-06-09_
 
 ## Roadmap philosophy
 
@@ -94,7 +94,28 @@ Use a minimal inquiry form that collects only what is needed to respond:
 
 ---
 
-## Phase 3 — Events and activities
+## Phase 3 — Local visibility bridge
+
+**Goal:** Connect the inquiry workflow to trust-building content by making the site easier for local families and referral partners to find and understand.
+
+### Tasks
+
+- Keep page titles and meta descriptions unique and natural.
+- Maintain consistent ACaring Adult Home NAP details in the footer.
+- Keep LocalBusiness structured data aligned with verified public contact details.
+- Maintain sitemap and robots files.
+- Use privacy-safe FAQ and referral content to answer common Federal Way Adult Family Home search questions.
+- Track optional inquiry source without making the form feel like medical intake.
+
+### Exit criteria
+
+- Search users can find clear Home, Care Services, Who We Serve, Referrals, FAQ, and Contact paths.
+- Local wording is factual and not keyword-stuffed.
+- No public form asks for sensitive medical or identity information.
+
+---
+
+## Phase 4 — Events and activities
 
 **Goal:** Make `events.html` useful without becoming a high-maintenance calendar.
 
@@ -118,7 +139,7 @@ This does not need to be a full event management system yet. A static card layou
 
 ---
 
-## Phase 4 — Trust and local authority content
+## Phase 5 — Trust and local authority content
 
 **Goal:** Build a light content hub that answers family and referral questions.
 
@@ -138,7 +159,7 @@ This does not need to be a full event management system yet. A static card layou
 
 ---
 
-## Phase 5 — Light data-backed system
+## Phase 6 — Light data-backed system
 
 **Goal:** Use the website as part of an operating system for inquiries and growth.
 

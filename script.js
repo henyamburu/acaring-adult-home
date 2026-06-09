@@ -1,7 +1,13 @@
 
-function toggleMenu() {
+function toggleMenu(button) {
   const nav = document.getElementById('navLinks');
-  if (nav) nav.classList.toggle('open');
+  if (!nav) return;
+
+  const isOpen = nav.classList.toggle('open');
+  if (button) {
+    button.setAttribute('aria-expanded', String(isOpen));
+    button.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  }
 }
 
 document.querySelectorAll('.tab-btn').forEach(button => {
@@ -20,6 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttons = accordion.querySelectorAll('.faq-question');
 
     buttons.forEach(button => {
+      const panel = document.getElementById(button.getAttribute('aria-controls'));
+      if (panel) {
+        panel.hidden = button.getAttribute('aria-expanded') !== 'true';
+      }
+
       button.addEventListener('click', () => {
         const currentItem = button.closest('.faq-item');
         const isOpen = button.getAttribute('aria-expanded') === 'true';
@@ -29,14 +40,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
           otherButton.setAttribute('aria-expanded', 'false');
           otherButton.closest('.faq-item')?.classList.remove('is-open');
+          const otherPanel = document.getElementById(otherButton.getAttribute('aria-controls'));
+          if (otherPanel) otherPanel.hidden = true;
         });
 
         button.setAttribute('aria-expanded', String(!isOpen));
         currentItem?.classList.toggle('is-open', !isOpen);
+        if (panel) panel.hidden = isOpen;
+      });
+
+      button.addEventListener('keydown', event => {
+        const currentIndex = Array.from(buttons).indexOf(button);
+        let nextIndex = currentIndex;
+
+        if (event.key === 'ArrowDown') nextIndex = (currentIndex + 1) % buttons.length;
+        if (event.key === 'ArrowUp') nextIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = buttons.length - 1;
+
+        if (nextIndex !== currentIndex) {
+          event.preventDefault();
+          buttons[nextIndex].focus();
+        }
       });
     });
   });
 });
+
+function trackInquirySubmitSuccess(formData) {
+  const eventData = {
+    event: 'inquiry_submit_success',
+    inquiry_type: String(formData.get('inquiry_type') || ''),
+    inquiry_role: String(formData.get('inquiry_role') || ''),
+    preferred_contact: String(formData.get('preferred_contact') || ''),
+    hear_about: String(formData.get('hear_about') || '')
+  };
+
+  window.dispatchEvent(new CustomEvent('inquiry_submit_success', { detail: eventData }));
+
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'inquiry_submit_success', {
+      inquiry_type: eventData.inquiry_type,
+      inquiry_role: eventData.inquiry_role,
+      preferred_contact: eventData.preferred_contact,
+      hear_about: eventData.hear_about
+    });
+  }
+
+  if (Array.isArray(window.dataLayer)) {
+    window.dataLayer.push(eventData);
+  }
+}
 
 async function handleSubmit(e) {
   e.preventDefault();
@@ -73,6 +127,7 @@ async function handleSubmit(e) {
     }
 
     form.reset();
+    trackInquirySubmitSuccess(formData);
     if (status) {
       status.textContent = 'Thank you. Your inquiry has been sent. We will follow up as soon as possible.';
       status.classList.add('form-status--success');
