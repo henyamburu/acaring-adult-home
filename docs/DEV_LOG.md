@@ -6,6 +6,24 @@ Use this file as the running project memory for Codex and future development ses
 
 ## Log entries
 
+### 2026-06-09 - Confirmed public address display decision
+
+**Changed:**
+
+- Recorded owner decision to keep both full Federal Way residential addresses public.
+
+**Reason:**
+
+The site intentionally uses both full addresses in location content, map links, footer wording, and LocalBusiness structured data.
+
+**Testing performed:**
+
+- Documentation-only update.
+
+**Follow-up needed:**
+
+- Revisit only if the owner later changes the privacy posture for public address display.
+
 ### 2026-06-09 - Recorded post-deploy local SEO verification
 
 **Changed:**
@@ -26,7 +44,6 @@ Production checks 1 through 4 were completed after merge/deploy: Cloudflare Page
 
 **Follow-up needed:**
 
-- Confirm whether both full residential addresses remain approved for public display.
 - Use one shared Google Business Profile for now; add `sameAs` only after the official profile URL is confirmed.
 - Install Cloudflare Web Analytics once and keep any analytics events non-PII.
 
@@ -70,7 +87,6 @@ Structured data should model the organization and two locations accurately, redi
 
 **Follow-up needed:**
 
-- Owner should confirm both full residential addresses remain approved for public display.
 - One shared Google Business Profile is expected for now; confirm the official profile URL before adding any `sameAs` markup.
 - Install Cloudflare Web Analytics once when the production account script is available; GA4/GTM should remain absent unless explicitly approved.
 
@@ -127,7 +143,7 @@ Improve local search visibility and conversion clarity for families and referral
 
 **Follow-up needed:**
 
-- Owner should confirm both full residential addresses remain approved for public display.
+- Resolved later on 2026-06-09: owner confirmed both full residential addresses should remain public.
 - Run a live post-deploy structured-data test and contact form submission on production.
 
 ### 2026-06-08 - Completed public copy and claim-safety pass
@@ -173,7 +189,7 @@ The site should use warmer, clearer, claim-safe Adult Family Home language and a
 
 **Follow-up needed:**
 
-- Owner should confirm whether full residential addresses should remain public.
+- Resolved later on 2026-06-09: owner confirmed both full residential addresses should remain public.
 
 ### 2026-06-08 - Completed contact detail and navigation audit
 

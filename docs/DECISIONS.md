@@ -16,7 +16,7 @@ Use this file to record decisions that affect the site structure, content model,
 | 2026-06-02 | Use a Cloudflare Pages Function with an `EMAIL` binding for website inquiries | Keeps form submission server-side, avoids unreliable `mailto:` behavior, and sends notifications to the approved inquiry alias | Active |
 | 2026-06-02 | Use `website@acaringadulthome.com` as the verified Cloudflare sender address for inquiry notifications | Sender has been enabled in Cloudflare and matches the configured `EMAIL` binding | Active |
 | 2026-06-09 | Use conservative local SEO wording focused on "Adult Family Home in Federal Way, WA" | Supports local search without keyword stuffing, ranking claims, fake reviews, or medical overclaims | Active |
-| 2026-06-09 | Keep both Federal Way residential locations visible because they were already public on the site | Structured data and footer wording use the two existing public locations; owner should still confirm this remains approved for public display | Active |
+| 2026-06-09 | Keep both Federal Way residential locations visible with full street addresses | Owner confirmed both full residential addresses should remain public; structured data, maps, and footer wording may continue using both locations | Active |
 | 2026-06-09 | Add optional inquiry-source tracking to the contact form | Helps understand whether inquiries come from Google Search, Google Maps, state resources, referral partners, family/friends, social media, or other sources without collecting sensitive health data | Active |
 | 2026-06-09 | Use `Organization` plus separate `LocalBusiness` schema nodes for the two locations | More accurately represents the business and avoids one LocalBusiness entity with multiple addresses in a single address array | Active |
 | 2026-06-09 | Do not add `geo`, `sameAs`, `aggregateRating`, reviews, or a medical schema subtype | Coordinates, the shared Google Business Profile URL, displayed compliant reviews, and medical-clinic representation have not been verified for markup use | Active |
@@ -29,7 +29,7 @@ Use this file to record decisions that affect the site structure, content model,
 |---|---|---|
 | Inquiry storage | Email only, email + spreadsheet, CRM | Start with email; later add spreadsheet/CRM if volume grows |
 | Events data model | Hardcoded HTML cards, JSON file rendered by JS, CMS | Start hardcoded; move to JSON when updates become frequent |
-| Public locations | One public address, two public addresses, service area only | Both addresses remain public because they were already on the site; owner should confirm ongoing approval |
+| Public locations | One public address, two public addresses, service area only | Use both full public street addresses unless the owner changes this privacy decision later |
 | Separate Google Business Profiles | One shared profile, two profiles, none verified | Use one shared profile for now; no `sameAs` link is added until the official profile URL is confirmed |
 | GA4 or GTM | Cloudflare Web Analytics only, GA4, GTM, none | No GA4/GTM script installed; revisit only with owner approval and non-PII event rules |
 | Photography | Original property photos, staged staff photos, stock photos, abstract/home-detail photos | Prefer original property/detail photos with no residents shown |
